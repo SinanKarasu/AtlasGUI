@@ -14,7 +14,7 @@
 cmake-build-*/
 CMakeFiles/
 CMakeCache.txt
-Makefile
+#Makefile
 CMakeScripts/
 Testing/
 CTestTestfile.cmake
@@ -54,3 +54,4 @@ SCCS/
 *.swp
 *~
 *.pch
+atlas

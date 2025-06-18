@@ -28,6 +28,24 @@
 			path = AtlasCL;
 			sourceTree = "<group>";
 		};
+		F74DDC572E00BE7B00F763BD /* FSM */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			name = FSM;
+			path = ../FSM;
+			sourceTree = SOURCE_ROOT;
+		};
+		F74DDC7C2E00BE7B00F763BD /* Generated */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			name = Generated;
+			path = ../Generated;
+			sourceTree = SOURCE_ROOT;
+		};
+		F74DDC842E00BE7B00F763BD /* Grammar */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			name = Grammar;
+			path = ../Grammar;
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +64,9 @@
 			children = (
 				F74107572DFC98C000602AD5 /* AtlasCL */,
 				F74107562DFC98C000602AD5 /* Products */,
+				F74DDC572E00BE7B00F763BD /* FSM */,
+				F74DDC7C2E00BE7B00F763BD /* Generated */,
+				F74DDC842E00BE7B00F763BD /* Grammar */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,10 +85,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F741075C2DFC98C000602AD5 /* Build configuration list for PBXNativeTarget "AtlasCL" */;
 			buildPhases = (
+				F74DDCEB2E02217400F763BD /* Generate FSM Code (SMC) */,
+				F74DDC522E00B80A00F763BD /* Generate Grammar Parsers */,
 				F74107512DFC98C000602AD5 /* Sources */,
 				F74107522DFC98C000602AD5 /* Frameworks */,
 				F74107532DFC98C000602AD5 /* CopyFiles */,
-				F74107912DFCB09900602AD5 /* ShellScript */,
+				F74107912DFCB09900602AD5 /* Copy and Sign Binary */,
 			);
 			buildRules = (
 			);
@@ -75,6 +98,9 @@
 			);
 			fileSystemSynchronizedGroups = (
 				F74107572DFC98C000602AD5 /* AtlasCL */,
+				F74DDC572E00BE7B00F763BD /* FSM */,
+				F74DDC7C2E00BE7B00F763BD /* Generated */,
+				F74DDC842E00BE7B00F763BD /* Grammar */,
 			);
 			name = AtlasCL;
 			packageProductDependencies = (
@@ -117,7 +143,7 @@
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		F74107912DFCB09900602AD5 /* ShellScript */ = {
+		F74107912DFCB09900602AD5 /* Copy and Sign Binary */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -126,6 +152,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Copy and Sign Binary";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -133,6 +160,42 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\necho \"Copying from: ${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\necho \"            to: $HOME/bin/\"\n\nmkdir -p \"$HOME/bin\"\n\nif [ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]; then\n  cp -v \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"$HOME/bin/\"\n  codesign --force --deep --sign - \"$HOME/bin/${EXECUTABLE_PATH}\"\nelse\n  echo \"ERROR: Binary not found: ${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\n  exit 1\nfi\n";
+		};
+		F74DDC522E00B80A00F763BD /* Generate Grammar Parsers */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Grammar Parsers";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#!/bin/bash\nset -e\n\nANTLR=\"${SRCROOT}/../../../DevTools/pccts/bin/antlr\"\nDLG=\"${SRCROOT}/../../../DevTools/pccts/bin/dlg\"\nSMC=\"${SRCROOT}/../../../DevTools/smc/smc\"\n\nGRAMMAR_DIR=\"${SRCROOT}/../Grammar\"\nFSM_DIR=\"${SRCROOT}/../FSM\"\nOUTPUT_DIR=\"${SRCROOT}/../Generated\"\n\nmkdir -p \"$OUTPUT_DIR\"\n\necho \"📘 Generating grammar sources...\"\ncd \"$GRAMMAR_DIR\" || { echo \"❌ Could not cd to $GRAMMAR_DIR\"; exit 1; }\n\n$ANTLR -ge -gt -CC -ft AtlasTokens.h -fl AtlasDLG.dlg -k 4 -prc on -mrhoist on -rl 80000 \\\n    tokens.g atlas1.g verbs.g atlas2.g expression.g comparison.g -o ${OUTPUT_DIR}\n\n$DLG -C2 -CC -ci -cl AtlasDLG AtlasDLG.dlg -o ${OUTPUT_DIR}\n\necho \"📘 Generating TEDL grammar...\"\n$ANTLR -CC -gxt -ft AtlasTokens.h -gx -gt -w2 -k 2 -prc on -rl 80000 tokens.g tedl.g -o ${OUTPUT_DIR}\n# $DLG -C2 -CC -ci -cl TedlDLG TedlDLG.dlg  # Uncomment if TedlDLG.dlg exists\n\necho \"✅ Grammar generation complete.\"\n";
+		};
+		F74DDCEB2E02217400F763BD /* Generate FSM Code (SMC) */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Generate FSM Code (SMC)";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\necho \"🧠 Generating FSM code from .sm files...\"\n\nFSM_DIR=\"${SRCROOT}/FSM\"\nGEN_DIR=\"${SRCROOT}/Generated\"\nSMC_EXEC=\"${SRCROOT}/../smcplusplus/smc\"  # adjust if installed elsewhere\n\nmkdir -p \"$GEN_DIR\"\n\nfind \"$FSM_DIR\" -name '*.sm' | while read -r smfile; do\n    echo \"  🌀 Processing $(basename \"$smfile\")\"\n    \"$SMC_EXEC\" -o \"$GEN_DIR\" \"$smfile\" || exit 1\ndone\n\necho \"✅ SMC generation complete.\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -200,6 +263,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -256,6 +320,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -270,6 +335,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4HVP45GV3U;
 				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = "/Volumes/GitHubDeveloper/DevTools/pccts/h/**";
+				"HEADER_SEARCH_PATHS[arch=*]" = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-I/Volumes/GitHubDeveloper/DevTools/pccts/h",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -280,6 +351,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4HVP45GV3U;
 				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = "/Volumes/GitHubDeveloper/DevTools/pccts/h/**";
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-I/Volumes/GitHubDeveloper/DevTools/pccts/h",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
