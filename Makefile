@@ -19,11 +19,13 @@ SMC         = $(SMCPLUSPLUS)/smc
 
 GRAMMAR	= ./Grammar
 GENERATED	= ./Generated
+SOURCES = ./Sources
 
 
 CCC			= clang++
 
 CFLAGS = -g -Wall -I. -I$(ANTLR_H) -I$(GENERATED)
+CFLAGS += -IInclude
 
 LDFLAGS = -lpthread
 
@@ -74,7 +76,7 @@ FNAMES	 +=		$(addprefix $(GENERATED)/,			\
 #FNAMES	+=					\
 #		$(SMC_SPAWN)
 
-FNAMES	+=					\
+FNAMES	+=	$(addprefix $(SOURCES)/,			\
 		ArrayObject			\
 		ASTVector			\
 		StringVector			\
@@ -126,7 +128,8 @@ FNAMES	+=					\
 		getToken			\
 		NestedTokenStream		\
 		ExecEnv				\
-		AtlasBox
+		AtlasBox	\
+		)
 
 FNAMES	+=	$(ANTLR_H)/AParser		\
 		$(ANTLR_H)/DLexerBase		\
@@ -143,7 +146,7 @@ GRM_TEDL	= $(addprefix $(GRAMMAR)/, \
 # 		TedlParser			\
 
 
-FNAMES	+=					\
+FNAMES	+=	$(addprefix $(SOURCES)/,			\
 		Graph				\
 		Equivalence			\
 		EdgeList			\
@@ -198,10 +201,11 @@ FNAMES	+=					\
 		NodeFunc			\
 		EdgeFunc			\
 		DebugEnv			\
+		)
 					
 		
 
-FNAMES	+=	\
+FNAMES	+=	$(addprefix $(SOURCES)/,			\
 		TedlSupport		\
 		tedlmain		\
 		TedlSignalVerbAST	\
@@ -211,10 +215,12 @@ FNAMES	+=	\
 		TedlExchangeVerbVisitor	\
 		TedlDeviceAST		\
 		TedlCompAST	\
-		ReverseMap
+		ReverseMap \
+		)
 
-FNAMES	+=	\
-		CodeGenVisitor
+FNAMES	+=	$(addprefix $(SOURCES)/,			\
+		CodeGenVisitor \
+		)
   
 OBJ	=	$(FNAMES:%=%.o)	
 
