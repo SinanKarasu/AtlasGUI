@@ -7,12 +7,15 @@
 # DLG scanner
 
 # The following filenames must be consistent with ANTLR/DLG flags
-PCCTS		= ../../DevTools/pccts
-ANTLR_H		= $(PCCTS)/h
-BIN		= $(PCCTS)/bin
-ANTLR		= $(BIN)/antlr
-DLG		= $(BIN)/dlg
-SMC		= ../../DevTools/smcplusplus/smc
+DEVTOOLS    = ../../DevTools
+PCCTS       = $(DEVTOOLS)/pccts
+SMCPLUSPLUS = $(DEVTOOLS)/smcplusplus
+
+ANTLR_H     = $(PCCTS)/h
+BIN         = $(PCCTS)/bin
+ANTLR       = $(BIN)/antlr
+DLG         = $(BIN)/dlg
+SMC         = $(SMCPLUSPLUS)/smc
 
 GRAMMAR	= ./Grammar
 GENERATED	= ./Generated
