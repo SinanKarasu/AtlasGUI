@@ -12,7 +12,7 @@ ANTLR_H		= $(PCCTS)/h
 BIN		= $(PCCTS)/bin
 ANTLR		= $(BIN)/antlr
 DLG		= $(BIN)/dlg
-SMC		= ../../DevTools/smc/smc
+SMC		= ../../DevTools/smcplusplus/smc
 
 GRAMMAR	= ./Grammar
 GENERATED	= ./Generated
@@ -35,18 +35,20 @@ GRM_ATLAS	= $(addprefix $(GRAMMAR)/, \
 		tokens.g atlas1.g verbs.g atlas2.g expression.g comparison.g \
 		)
 
-SMC_SPAWN		= \
-				ResourceDataBus  ResourceEventMonitor \
-				ResourceSensor  ResourceSourceLoad
-				
-				
-# SMC_SPAWN_CC		=	$(SMC_SPAWN:%=%.cc)
-# SMC_SPAWN_H			=	$(SMC_SPAWN:%=%.h)
-# SMC_SPAWN_O			=	$(SMC_SPAWN:%=%.o)
+FSM_FILES := $(wildcard FSM/*.sm)
+FSM_BASENAMES := $(notdir $(basename $(FSM_FILES)))
 
-SMC_SPAWN_CC = $(SMC_SPAWN:%=$(GENERATED)/%.cc)
-SMC_SPAWN_H  = $(SMC_SPAWN:%=$(GENERATED)/%.h)
-SMC_SPAWN_O  = $(SMC_SPAWN:%=$(GENERATED)/%.o)
+SMC_SPAWN_CC := $(FSM_BASENAMES:%=$(GENERATED)/%.cc)
+SMC_SPAWN_H  := $(FSM_BASENAMES:%=$(GENERATED)/%.h)
+SMC_SPAWN_O  := $(FSM_BASENAMES:%=$(GENERATED)/%.o)
+
+$(GENERATED)/%.cc $(GENERATED)/%.h: FSM/%.sm
+	@echo "Generating from $<"
+	$(SMC) -o $(GENERATED) $<
+
+# SMC_SPAWN_CC = $(SMC_SPAWN:%=$(GENERATED)/%.cc)
+# SMC_SPAWN_H  = $(SMC_SPAWN:%=$(GENERATED)/%.h)
+# SMC_SPAWN_O  = $(SMC_SPAWN:%=$(GENERATED)/%.o)
 
 
 
@@ -271,6 +273,7 @@ scrub: clean
 
 print-vars:
 	@echo "OBJ = $(OBJ)"
+	@echo "SMC_SPAWN_O = $(SMC_SPAWN_O)"
 
 
 check-dupes:
@@ -287,26 +290,6 @@ check-dupes:
 .cc.o:
 	$(CCC) -c $(CCFLAGS) -o $*.o $<
 
-# .sm.cc:
-# 	$(SMC) < $<
-	
-# .sm.cc:
-# 	$(SMC) < $< > $(GENERATED)/$.cc
-
-# $(GENERATED)/%.cc: %.sm
-# 	$(SMC) < $< > $@
-
-$(GENERATED)/%.cc $(GENERATED)/%.h: %.sm
-	@mkdir -p $(GENERATED)
-	(cd $(GENERATED) && ../$(SMC) < ../$<)
-
 
 $(GENERATED):
 	mkdir -p $@
-
-#.sm.h:
-#	$(SMC) < $<
-	
-#.sm.o:
-#	$(SMC) < $<
-#	$(CCC) -c $(CFLAGS) -o $*.o $< 
