@@ -47,6 +47,7 @@ SMC_SPAWN_CC := $(FSM_BASENAMES:%=$(GENERATED)/%.cc)
 SMC_SPAWN_H  := $(FSM_BASENAMES:%=$(GENERATED)/%.h)
 SMC_SPAWN_O  := $(FSM_BASENAMES:%=$(GENERATED)/%.o)
 
+
 $(GENERATED)/%.cc $(GENERATED)/%.h: FSM/%.sm
 	@echo "Generating from $<"
 	$(SMC) -o $(GENERATED) $<
@@ -240,7 +241,6 @@ ANTLR_TEDL_SPAWN	= $(addprefix $(GENERATED)/, \
 			tedl.cpp	TedlParser.cpp	TedlParser.h \
 )
 			
-
 # $(GENERATED):
 # 	mkdir -p $@
 
@@ -250,6 +250,8 @@ ANTLR_TEDL_SPAWN	= $(addprefix $(GENERATED)/, \
 atlas:	$(SMC_SPAWN_O)	$(OBJ)	
 	$(CCC) $(CCFLAGS) -o atlas  $(SMC_SPAWN_O) $(OBJ)  -ldl  -lpthread
 	
+
+$(OBJ): $(ANTLR_ATLAS_SPAWN) $(ANTLR_TEDL_SPAWN) $(SMC_SPAWN)
 
 ################## Atlas stuff ##################################
 
