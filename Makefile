@@ -244,13 +244,27 @@ ANTLR_TEDL_SPAWN	= $(addprefix $(GENERATED)/, \
 # $(GENERATED):
 # 	mkdir -p $@
 
+TARGET = bin/AtlasCL
+
 
 ################### Dependencies ################################
-	
-atlas:	$(SMC_SPAWN_O)	$(OBJ)	
-	$(CCC) $(CCFLAGS) -o atlas  $(SMC_SPAWN_O) $(OBJ)  -ldl  -lpthread
+all: build
+build: $(TARGET)
+install: 
+	@echo "📦 Installing (placeholder)..."
+# Optional fallback if unknown action is passed
+.DEFAULT:
+	@echo "⚠️ Unknown action: $@"
+	@exit 0
+
+$(TARGET):	$(SMC_SPAWN_O)	$(OBJ) | bin
+	$(CCC) $(CCFLAGS) -o $(TARGET)  $(SMC_SPAWN_O) $(OBJ)  -ldl  -lpthread
 	
 
+# $(TARGET): | bin
+bin:
+	mkdir -p bin
+	
 $(OBJ): $(ANTLR_ATLAS_SPAWN) $(ANTLR_TEDL_SPAWN) $(SMC_SPAWN)
 
 ################## Atlas stuff ##################################
@@ -274,13 +288,13 @@ $(SMC_SPAWN_O):	$(SMC_SPAWN_CC)
 #################################################################
 
 clean:
-	-rm -f *.o $(GENERATED)/*.o *.pch core $(ANTLR_ATLAS_SPAWN) $(DLG_ATLAS_SPAWN)
+	-rm -f $(OBJ) *.o $(GENERATED)/*.o *.pch core $(ANTLR_ATLAS_SPAWN) $(DLG_ATLAS_SPAWN)
 	-rm -f $(ANTLR_TEDL_SPAWN) $(DLG_TEDL_SPAWN)
 	-rm -f $(SMC_SPAWN_CC) $(SMC_SPAWN_H)
 	-rm -rf Templates.DB ir.out .make.state
 	
 scrub: clean
-	-rm -f atlas
+	-rm -f $(TARGET)
 
 print-vars:
 	@echo "OBJ = $(OBJ)"
