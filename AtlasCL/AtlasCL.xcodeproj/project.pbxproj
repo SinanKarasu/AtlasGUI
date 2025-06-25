@@ -19,263 +19,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F77344FD2E07227400DA5C1A /* Dimension.db */ = {isa = PBXFileReference; lastKnownFileType = text; path = Dimension.db; sourceTree = "<group>"; };
-		F77344FE2E07227400DA5C1A /* Noun.db */ = {isa = PBXFileReference; lastKnownFileType = text; path = Noun.db; sourceTree = "<group>"; };
-		F77345002E07227400DA5C1A /* ResourceDataBus.sm */ = {isa = PBXFileReference; lastKnownFileType = text; path = ResourceDataBus.sm; sourceTree = "<group>"; };
-		F77345012E07227400DA5C1A /* ResourceEventMonitor.sm */ = {isa = PBXFileReference; lastKnownFileType = text; path = ResourceEventMonitor.sm; sourceTree = "<group>"; };
-		F77345022E07227400DA5C1A /* ResourceSensor.sm */ = {isa = PBXFileReference; lastKnownFileType = text; path = ResourceSensor.sm; sourceTree = "<group>"; };
-		F77345032E07227400DA5C1A /* ResourceSourceLoad.sm */ = {isa = PBXFileReference; lastKnownFileType = text; path = ResourceSourceLoad.sm; sourceTree = "<group>"; };
-		F77345052E07227400DA5C1A /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		F77345072E07227400DA5C1A /* atlas1.g */ = {isa = PBXFileReference; lastKnownFileType = text; path = atlas1.g; sourceTree = "<group>"; };
-		F77345082E07227400DA5C1A /* atlas2.g */ = {isa = PBXFileReference; lastKnownFileType = text; path = atlas2.g; sourceTree = "<group>"; };
-		F77345092E07227400DA5C1A /* comparison.g */ = {isa = PBXFileReference; lastKnownFileType = text; path = comparison.g; sourceTree = "<group>"; };
-		F773450A2E07227400DA5C1A /* expression.g */ = {isa = PBXFileReference; lastKnownFileType = text; path = expression.g; sourceTree = "<group>"; };
-		F773450B2E07227400DA5C1A /* tedl.g */ = {isa = PBXFileReference; lastKnownFileType = text; path = tedl.g; sourceTree = "<group>"; };
-		F773450C2E07227400DA5C1A /* tokens.g */ = {isa = PBXFileReference; lastKnownFileType = text; path = tokens.g; sourceTree = "<group>"; };
-		F773450D2E07227400DA5C1A /* verbs.g */ = {isa = PBXFileReference; lastKnownFileType = text; path = verbs.g; sourceTree = "<group>"; };
-		F773450F2E07227400DA5C1A /* ActionAST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionAST.h; sourceTree = "<group>"; };
-		F77345102E07227400DA5C1A /* AdaptationModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdaptationModel.h; sourceTree = "<group>"; };
-		F77345112E07227400DA5C1A /* AdaptationModels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdaptationModels.h; sourceTree = "<group>"; };
-		F77345122E07227400DA5C1A /* AdapterConnectorNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdapterConnectorNode.h; sourceTree = "<group>"; };
-		F77345132E07227400DA5C1A /* AnalogResourceContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnalogResourceContext.h; sourceTree = "<group>"; };
-		F77345142E07227400DA5C1A /* AppendCompat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppendCompat.h; sourceTree = "<group>"; };
-		F77345152E07227400DA5C1A /* ArrayObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArrayObject.h; sourceTree = "<group>"; };
-		F77345162E07227400DA5C1A /* Association.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Association.h; sourceTree = "<group>"; };
-		F77345172E07227400DA5C1A /* AST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AST.h; sourceTree = "<group>"; };
-		F77345182E07227400DA5C1A /* astream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = astream.h; sourceTree = "<group>"; };
-		F77345192E07227400DA5C1A /* ASTVector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASTVector.h; sourceTree = "<group>"; };
-		F773451A2E07227400DA5C1A /* ATEActionAST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATEActionAST.h; sourceTree = "<group>"; };
-		F773451B2E07227400DA5C1A /* ATEFieldTypeAST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATEFieldTypeAST.h; sourceTree = "<group>"; };
-		F773451C2E07227400DA5C1A /* ATEResourceAST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATEResourceAST.h; sourceTree = "<group>"; };
-		F773451D2E07227400DA5C1A /* atlas.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = atlas.h; sourceTree = "<group>"; };
-		F773451E2E07227400DA5C1A /* AtlasAST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AtlasAST.h; sourceTree = "<group>"; };
-		F773451F2E07227400DA5C1A /* AtlasBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AtlasBox.h; sourceTree = "<group>"; };
-		F77345202E07227400DA5C1A /* AtlasDefinitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AtlasDefinitions.h; sourceTree = "<group>"; };
-		F77345212E07227400DA5C1A /* AtlasLexer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AtlasLexer.h; sourceTree = "<group>"; };
-		F77345222E07227400DA5C1A /* AtlasStd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AtlasStd.h; sourceTree = "<group>"; };
-		F77345232E07227400DA5C1A /* AtlasToken.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AtlasToken.h; sourceTree = "<group>"; };
-		F77345242E07227400DA5C1A /* BasicTypeAST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasicTypeAST.h; sourceTree = "<group>"; };
-		F77345252E07227400DA5C1A /* BFS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BFS.h; sourceTree = "<group>"; };
-		F77345262E07227400DA5C1A /* BuiltinFunctionAST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuiltinFunctionAST.h; sourceTree = "<group>"; };
-		F77345272E07227400DA5C1A /* BusNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BusNode.h; sourceTree = "<group>"; };
-		F77345282E07227400DA5C1A /* CapacitiveEdge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CapacitiveEdge.h; sourceTree = "<group>"; };
-		F77345292E07227400DA5C1A /* Circuit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Circuit.h; sourceTree = "<group>"; };
-		F773452A2E07227400DA5C1A /* CodeGenVisitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CodeGenVisitor.h; sourceTree = "<group>"; };
-		F773452B2E07227400DA5C1A /* CompositeDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CompositeDevice.h; sourceTree = "<group>"; };
-		F773452C2E07227400DA5C1A /* ConfigurationModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigurationModel.h; sourceTree = "<group>"; };
-		F773452D2E07227400DA5C1A /* ConfigurationModels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigurationModels.h; sourceTree = "<group>"; };
-		F773452E2E07227400DA5C1A /* Contact.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
-		F773452F2E07227400DA5C1A /* DataBus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataBus.h; sourceTree = "<group>"; };
-		F77345302E07227400DA5C1A /* DataBusActionAST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataBusActionAST.h; sourceTree = "<group>"; };
-		F77345312E07227400DA5C1A /* DataBusResourceContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataBusResourceContext.h; sourceTree = "<group>"; };
-		F77345322E07227400DA5C1A /* DataBusTypeAST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataBusTypeAST.h; sourceTree = "<group>"; };
-		F77345332E07227400DA5C1A /* DataBusVerbAST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataBusVerbAST.h; sourceTree = "<group>"; };
-		F77345342E07227400DA5C1A /* DebugEnv.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DebugEnv.h; sourceTree = "<group>"; };
-		F77345352E07227400DA5C1A /* DestinationMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DestinationMode.h; sourceTree = "<group>"; };
-		F77345362E07227400DA5C1A /* Device.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
-		F77345372E07227400DA5C1A /* DeviceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceModel.h; sourceTree = "<group>"; };
-		F77345382E07227400DA5C1A /* DeviceModels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceModels.h; sourceTree = "<group>"; };
-		F77345392E07227400DA5C1A /* DevicePath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DevicePath.h; sourceTree = "<group>"; };
-		F773453A2E07227400DA5C1A /* DevicePortNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DevicePortNode.h; sourceTree = "<group>"; };
-		F773453B2E07227400DA5C1A /* DeviceReferencePortNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceReferencePortNode.h; sourceTree = "<group>"; };
-		F773453C2E07227400DA5C1A /* DFSContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DFSContext.h; sourceTree = "<group>"; };
-		F773453D2E07227400DA5C1A /* Dictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dictionary.h; sourceTree = "<group>"; };
-		F773453E2E07227400DA5C1A /* Edge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Edge.h; sourceTree = "<group>"; };
-		F773453F2E07227400DA5C1A /* EdgeFunc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EdgeFunc.h; sourceTree = "<group>"; };
-		F77345402E07227400DA5C1A /* EdgeList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EdgeList.h; sourceTree = "<group>"; };
-		F77345412E07227400DA5C1A /* Equivalence.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Equivalence.h; sourceTree = "<group>"; };
-		F77345422E07227400DA5C1A /* EventMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventMonitor.h; sourceTree = "<group>"; };
-		F77345432E07227400DA5C1A /* EventTypeAST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventTypeAST.h; sourceTree = "<group>"; };
-		F77345442E07227400DA5C1A /* ExceptionTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExceptionTypes.h; sourceTree = "<group>"; };
-		F77345452E07227400DA5C1A /* ExecEnv.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExecEnv.h; sourceTree = "<group>"; };
-		F77345462E07227400DA5C1A /* GateConnEventAST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GateConnEventAST.h; sourceTree = "<group>"; };
-		F77345472E07227400DA5C1A /* Graph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Graph.h; sourceTree = "<group>"; };
-		F77345482E07227400DA5C1A /* GraphContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphContext.h; sourceTree = "<group>"; };
-		F77345492E07227400DA5C1A /* Impedance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Impedance.h; sourceTree = "<group>"; };
-		F773454A2E07227400DA5C1A /* InductiveEdge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InductiveEdge.h; sourceTree = "<group>"; };
-		F773454B2E07227400DA5C1A /* InitList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InitList.h; sourceTree = "<group>"; };
-		F773454C2E07227400DA5C1A /* InterfaceConnectorNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceConnectorNode.h; sourceTree = "<group>"; };
-		F773454D2E07227400DA5C1A /* LabelAST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LabelAST.h; sourceTree = "<group>"; };
-		F773454E2E07227400DA5C1A /* LoadDevicePortNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadDevicePortNode.h; sourceTree = "<group>"; };
-		F773454F2E07227400DA5C1A /* MnemonicsDB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MnemonicsDB.h; sourceTree = "<group>"; };
-		F77345502E07227400DA5C1A /* NestedParserBlackBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NestedParserBlackBox.h; sourceTree = "<group>"; };
-		F77345512E07227400DA5C1A /* NestedTokenStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NestedTokenStream.h; sourceTree = "<group>"; };
-		F77345522E07227400DA5C1A /* NodeFunc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NodeFunc.h; sourceTree = "<group>"; };
-		F77345532E07227400DA5C1A /* NodeName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NodeName.h; sourceTree = "<group>"; };
-		F77345542E07227400DA5C1A /* NounsModifiersDimensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NounsModifiersDimensions.h; sourceTree = "<group>"; };
-		F77345552E07227400DA5C1A /* OperatorAST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OperatorAST.h; sourceTree = "<group>"; };
-		F77345562E07227400DA5C1A /* PathNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PathNode.h; sourceTree = "<group>"; };
-		F77345572E07227400DA5C1A /* PathNodeList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PathNodeList.h; sourceTree = "<group>"; };
-		F77345582E07227400DA5C1A /* PointSourceNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PointSourceNode.h; sourceTree = "<group>"; };
-		F77345592E07227400DA5C1A /* ResettableIterator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResettableIterator.h; sourceTree = "<group>"; };
-		F773455A2E07227400DA5C1A /* ResistiveEdge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResistiveEdge.h; sourceTree = "<group>"; };
-		F773455B2E07227400DA5C1A /* Resource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Resource.h; sourceTree = "<group>"; };
-		F773455C2E07227400DA5C1A /* ResourceAST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResourceAST.h; sourceTree = "<group>"; };
-		F773455D2E07227400DA5C1A /* ResourceContextBASE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResourceContextBASE.h; sourceTree = "<group>"; };
-		F773455E2E07227400DA5C1A /* ResourceList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResourceList.h; sourceTree = "<group>"; };
-		F773455F2E07227400DA5C1A /* ReverseMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReverseMap.h; sourceTree = "<group>"; };
-		F77345602E07227400DA5C1A /* RWCompat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWCompat.h; sourceTree = "<group>"; };
-		F77345612E07227400DA5C1A /* Scope.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Scope.h; sourceTree = "<group>"; };
-		F77345622E07227400DA5C1A /* Sensor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sensor.h; sourceTree = "<group>"; };
-		F77345632E07227400DA5C1A /* SensorDevicePortNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SensorDevicePortNode.h; sourceTree = "<group>"; };
-		F77345642E07227400DA5C1A /* Set.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Set.h; sourceTree = "<group>"; };
-		F77345652E07227400DA5C1A /* Signal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Signal.h; sourceTree = "<group>"; };
-		F77345662E07227400DA5C1A /* SignalActionAST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalActionAST.h; sourceTree = "<group>"; };
-		F77345672E07227400DA5C1A /* SignalOperatorAST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalOperatorAST.h; sourceTree = "<group>"; };
-		F77345682E07227400DA5C1A /* SignalTypeAST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalTypeAST.h; sourceTree = "<group>"; };
-		F77345692E07227400DA5C1A /* SignalVerbAST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalVerbAST.h; sourceTree = "<group>"; };
-		F773456A2E07227400DA5C1A /* SimValues.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimValues.h; sourceTree = "<group>"; };
-		F773456B2E07227400DA5C1A /* SourceDevicePortNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SourceDevicePortNode.h; sourceTree = "<group>"; };
-		F773456C2E07227400DA5C1A /* SourceLoad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SourceLoad.h; sourceTree = "<group>"; };
-		F773456D2E07227400DA5C1A /* Std.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Std.h; sourceTree = "<group>"; };
-		F773456E2E07227400DA5C1A /* StringVector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StringVector.h; sourceTree = "<group>"; };
-		F773456F2E07227400DA5C1A /* SwitchContactNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwitchContactNode.h; sourceTree = "<group>"; };
-		F77345702E07227400DA5C1A /* SwitchModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwitchModel.h; sourceTree = "<group>"; };
-		F77345712E07227400DA5C1A /* TAGContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TAGContext.h; sourceTree = "<group>"; };
-		F77345722E07227400DA5C1A /* TedlCompAST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TedlCompAST.h; sourceTree = "<group>"; };
-		F77345732E07227400DA5C1A /* TedlDataBusTypeAST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TedlDataBusTypeAST.h; sourceTree = "<group>"; };
-		F77345742E07227400DA5C1A /* TedlDefinitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TedlDefinitions.h; sourceTree = "<group>"; };
-		F77345752E07227400DA5C1A /* TedlDeviceAST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TedlDeviceAST.h; sourceTree = "<group>"; };
-		F77345762E07227400DA5C1A /* TedlDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TedlDictionary.h; sourceTree = "<group>"; };
-		F77345772E07227400DA5C1A /* TedlExchangeVerbAST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TedlExchangeVerbAST.h; sourceTree = "<group>"; };
-		F77345782E07227400DA5C1A /* TedlExchangeVerbVisitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TedlExchangeVerbVisitor.h; sourceTree = "<group>"; };
-		F77345792E07227400DA5C1A /* TedlLexer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TedlLexer.h; sourceTree = "<group>"; };
-		F773457A2E07227400DA5C1A /* TedlSignalVerbAST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TedlSignalVerbAST.h; sourceTree = "<group>"; };
-		F773457B2E07227400DA5C1A /* TedlSignalVerbVisitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TedlSignalVerbVisitor.h; sourceTree = "<group>"; };
-		F773457C2E07227400DA5C1A /* TedlStd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TedlStd.h; sourceTree = "<group>"; };
-		F773457D2E07227400DA5C1A /* TimerObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimerObject.h; sourceTree = "<group>"; };
-		F773457E2E07227400DA5C1A /* TPSHardware.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPSHardware.h; sourceTree = "<group>"; };
-		F773457F2E07227400DA5C1A /* TwoTerm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwoTerm.h; sourceTree = "<group>"; };
-		F77345802E07227400DA5C1A /* Types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
-		F77345812E07227400DA5C1A /* UutConnectorNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UutConnectorNode.h; sourceTree = "<group>"; };
-		F77345822E07227400DA5C1A /* VerbAST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerbAST.h; sourceTree = "<group>"; };
-		F77345832E07227400DA5C1A /* Vertex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vertex.h; sourceTree = "<group>"; };
-		F77345842E07227400DA5C1A /* VertexDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VertexDictionary.h; sourceTree = "<group>"; };
-		F77345852E07227400DA5C1A /* VertexList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VertexList.h; sourceTree = "<group>"; };
-		F77345862E07227400DA5C1A /* VertexStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VertexStack.h; sourceTree = "<group>"; };
-		F77345872E07227400DA5C1A /* VirtualDataBusAST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VirtualDataBusAST.h; sourceTree = "<group>"; };
-		F77345882E07227400DA5C1A /* VirtualResourceAST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VirtualResourceAST.h; sourceTree = "<group>"; };
-		F77345892E07227400DA5C1A /* Visitors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Visitors.h; sourceTree = "<group>"; };
-		F773458A2E07227400DA5C1A /* Wire.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Wire.h; sourceTree = "<group>"; };
-		F773458C2E07227400DA5C1A /* ActionAST.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ActionAST.cc; sourceTree = "<group>"; };
-		F773458D2E07227400DA5C1A /* AdaptationModel.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AdaptationModel.cc; sourceTree = "<group>"; };
-		F773458E2E07227400DA5C1A /* AdaptationModels.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AdaptationModels.cc; sourceTree = "<group>"; };
-		F773458F2E07227400DA5C1A /* AdapterConnectorNode.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AdapterConnectorNode.cc; sourceTree = "<group>"; };
-		F77345902E07227400DA5C1A /* AnalogResourceContext.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AnalogResourceContext.cc; sourceTree = "<group>"; };
-		F77345912E07227400DA5C1A /* ArrayObject.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ArrayObject.cc; sourceTree = "<group>"; };
-		F77345922E07227400DA5C1A /* Association.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Association.cc; sourceTree = "<group>"; };
-		F77345932E07227400DA5C1A /* astream.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = astream.cc; sourceTree = "<group>"; };
-		F77345942E07227400DA5C1A /* ASTVector.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ASTVector.cc; sourceTree = "<group>"; };
-		F77345952E07227400DA5C1A /* ATEActionAST.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ATEActionAST.cc; sourceTree = "<group>"; };
-		F77345962E07227400DA5C1A /* ATEFieldTypeAST.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ATEFieldTypeAST.cc; sourceTree = "<group>"; };
-		F77345972E07227400DA5C1A /* ATEResourceAST.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ATEResourceAST.cc; sourceTree = "<group>"; };
-		F77345982E07227400DA5C1A /* AtlasAST.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AtlasAST.cc; sourceTree = "<group>"; };
-		F77345992E07227400DA5C1A /* AtlasBox.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AtlasBox.cc; sourceTree = "<group>"; };
-		F773459A2E07227400DA5C1A /* AtlasDefinitions.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AtlasDefinitions.cc; sourceTree = "<group>"; };
-		F773459B2E07227400DA5C1A /* atlasmain.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = atlasmain.cc; sourceTree = "<group>"; };
-		F773459C2E07227400DA5C1A /* AtlasSupport.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AtlasSupport.cc; sourceTree = "<group>"; };
-		F773459D2E07227400DA5C1A /* AtlasToken.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AtlasToken.cc; sourceTree = "<group>"; };
-		F773459E2E07227400DA5C1A /* BasicTypeAST.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BasicTypeAST.cc; sourceTree = "<group>"; };
-		F773459F2E07227400DA5C1A /* BFS.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BFS.cc; sourceTree = "<group>"; };
-		F77345A02E07227400DA5C1A /* BuiltinFunctionAST.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BuiltinFunctionAST.cc; sourceTree = "<group>"; };
-		F77345A12E07227400DA5C1A /* BusNode.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BusNode.cc; sourceTree = "<group>"; };
-		F77345A22E07227400DA5C1A /* CapacitiveEdge.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CapacitiveEdge.cc; sourceTree = "<group>"; };
-		F77345A32E07227400DA5C1A /* Circuit.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Circuit.cc; sourceTree = "<group>"; };
-		F77345A42E07227400DA5C1A /* CodeGenVisitor.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CodeGenVisitor.cc; sourceTree = "<group>"; };
-		F77345A52E07227400DA5C1A /* CompositeDevice.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CompositeDevice.cc; sourceTree = "<group>"; };
-		F77345A62E07227400DA5C1A /* ConfigurationModel.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ConfigurationModel.cc; sourceTree = "<group>"; };
-		F77345A72E07227400DA5C1A /* ConfigurationModels.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ConfigurationModels.cc; sourceTree = "<group>"; };
-		F77345A82E07227400DA5C1A /* Contact.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Contact.cc; sourceTree = "<group>"; };
-		F77345A92E07227400DA5C1A /* DataBus.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DataBus.cc; sourceTree = "<group>"; };
-		F77345AA2E07227400DA5C1A /* DataBusActionAST.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DataBusActionAST.cc; sourceTree = "<group>"; };
-		F77345AB2E07227400DA5C1A /* DataBusResourceContext.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DataBusResourceContext.cc; sourceTree = "<group>"; };
-		F77345AC2E07227400DA5C1A /* DataBusTypeAST.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DataBusTypeAST.cc; sourceTree = "<group>"; };
-		F77345AD2E07227400DA5C1A /* DataBusVerbAST.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DataBusVerbAST.cc; sourceTree = "<group>"; };
-		F77345AE2E07227400DA5C1A /* DebugEnv.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DebugEnv.cc; sourceTree = "<group>"; };
-		F77345AF2E07227400DA5C1A /* Device.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Device.cc; sourceTree = "<group>"; };
-		F77345B02E07227400DA5C1A /* DeviceModel.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DeviceModel.cc; sourceTree = "<group>"; };
-		F77345B12E07227400DA5C1A /* DeviceModels.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DeviceModels.cc; sourceTree = "<group>"; };
-		F77345B22E07227400DA5C1A /* DevicePath.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DevicePath.cc; sourceTree = "<group>"; };
-		F77345B32E07227400DA5C1A /* DevicePortNode.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DevicePortNode.cc; sourceTree = "<group>"; };
-		F77345B42E07227400DA5C1A /* DeviceReferencePortNode.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DeviceReferencePortNode.cc; sourceTree = "<group>"; };
-		F77345B52E07227400DA5C1A /* DFSContext.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DFSContext.cc; sourceTree = "<group>"; };
-		F77345B62E07227400DA5C1A /* Dictionary.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Dictionary.cc; sourceTree = "<group>"; };
-		F77345B72E07227400DA5C1A /* Edge.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Edge.cc; sourceTree = "<group>"; };
-		F77345B82E07227400DA5C1A /* EdgeFunc.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EdgeFunc.cc; sourceTree = "<group>"; };
-		F77345B92E07227400DA5C1A /* EdgeList.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EdgeList.cc; sourceTree = "<group>"; };
-		F77345BA2E07227400DA5C1A /* Equivalence.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Equivalence.cc; sourceTree = "<group>"; };
-		F77345BB2E07227400DA5C1A /* EventMonitor.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EventMonitor.cc; sourceTree = "<group>"; };
-		F77345BC2E07227400DA5C1A /* EventTypeAST.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EventTypeAST.cc; sourceTree = "<group>"; };
-		F77345BD2E07227400DA5C1A /* Exception.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Exception.cc; sourceTree = "<group>"; };
-		F77345BE2E07227400DA5C1A /* ExceptionTypes.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ExceptionTypes.cc; sourceTree = "<group>"; };
-		F77345BF2E07227400DA5C1A /* ExecEnv.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ExecEnv.cc; sourceTree = "<group>"; };
-		F77345C02E07227400DA5C1A /* GateConnEventAST.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GateConnEventAST.cc; sourceTree = "<group>"; };
-		F77345C12E07227400DA5C1A /* getToken.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = getToken.cc; sourceTree = "<group>"; };
-		F77345C22E07227400DA5C1A /* Graph.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Graph.cc; sourceTree = "<group>"; };
-		F77345C32E07227400DA5C1A /* GraphContext.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GraphContext.cc; sourceTree = "<group>"; };
-		F77345C42E07227400DA5C1A /* Impedance.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Impedance.cc; sourceTree = "<group>"; };
-		F77345C52E07227400DA5C1A /* InductiveEdge.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = InductiveEdge.cc; sourceTree = "<group>"; };
-		F77345C62E07227400DA5C1A /* InitList.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = InitList.cc; sourceTree = "<group>"; };
-		F77345C72E07227400DA5C1A /* InterfaceConnectorNode.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = InterfaceConnectorNode.cc; sourceTree = "<group>"; };
-		F77345C82E07227400DA5C1A /* LabelAST.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LabelAST.cc; sourceTree = "<group>"; };
-		F77345C92E07227400DA5C1A /* LoadDevicePortNode.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LoadDevicePortNode.cc; sourceTree = "<group>"; };
-		F77345CA2E07227400DA5C1A /* main.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cc; sourceTree = "<group>"; };
-		F77345CB2E07227400DA5C1A /* MnemonicsDB.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MnemonicsDB.cc; sourceTree = "<group>"; };
-		F77345CC2E07227400DA5C1A /* NestedTokenStream.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NestedTokenStream.cc; sourceTree = "<group>"; };
-		F77345CD2E07227400DA5C1A /* NodeFunc.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NodeFunc.cc; sourceTree = "<group>"; };
-		F77345CE2E07227400DA5C1A /* NodeName.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NodeName.cc; sourceTree = "<group>"; };
-		F77345CF2E07227400DA5C1A /* NounsModifiersDimensions.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NounsModifiersDimensions.cc; sourceTree = "<group>"; };
-		F77345D02E07227400DA5C1A /* OperatorAST.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = OperatorAST.cc; sourceTree = "<group>"; };
-		F77345D12E07227400DA5C1A /* PathNode.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PathNode.cc; sourceTree = "<group>"; };
-		F77345D22E07227400DA5C1A /* PathNodeList.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PathNodeList.cc; sourceTree = "<group>"; };
-		F77345D32E07227400DA5C1A /* PointSourceNode.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PointSourceNode.cc; sourceTree = "<group>"; };
-		F77345D42E07227400DA5C1A /* Queue.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Queue.cc; sourceTree = "<group>"; };
-		F77345D52E07227400DA5C1A /* ResistiveEdge.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ResistiveEdge.cc; sourceTree = "<group>"; };
-		F77345D62E07227400DA5C1A /* Resource.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Resource.cc; sourceTree = "<group>"; };
-		F77345D72E07227400DA5C1A /* ResourceAST.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ResourceAST.cc; sourceTree = "<group>"; };
-		F77345D82E07227400DA5C1A /* ResourceContextBASE.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ResourceContextBASE.cc; sourceTree = "<group>"; };
-		F77345D92E07227400DA5C1A /* ResourceList.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ResourceList.cc; sourceTree = "<group>"; };
-		F77345DA2E07227400DA5C1A /* ReverseMap.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ReverseMap.cc; sourceTree = "<group>"; };
-		F77345DB2E07227400DA5C1A /* Scope.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Scope.cc; sourceTree = "<group>"; };
-		F77345DC2E07227400DA5C1A /* Search.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Search.cc; sourceTree = "<group>"; };
-		F77345DD2E07227400DA5C1A /* Sensor.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Sensor.cc; sourceTree = "<group>"; };
-		F77345DE2E07227400DA5C1A /* SensorDevicePortNode.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SensorDevicePortNode.cc; sourceTree = "<group>"; };
-		F77345DF2E07227400DA5C1A /* Set.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Set.cc; sourceTree = "<group>"; };
-		F77345E02E07227400DA5C1A /* Signal.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Signal.cc; sourceTree = "<group>"; };
-		F77345E12E07227400DA5C1A /* SignalActionAST.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SignalActionAST.cc; sourceTree = "<group>"; };
-		F77345E22E07227400DA5C1A /* SignalOperatorAST.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SignalOperatorAST.cc; sourceTree = "<group>"; };
-		F77345E32E07227400DA5C1A /* SignalTypeAST.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SignalTypeAST.cc; sourceTree = "<group>"; };
-		F77345E42E07227400DA5C1A /* SignalVerbAST.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SignalVerbAST.cc; sourceTree = "<group>"; };
-		F77345E52E07227400DA5C1A /* SimulateCircuit.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SimulateCircuit.cc; sourceTree = "<group>"; };
-		F77345E62E07227400DA5C1A /* SourceDevicePortNode.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SourceDevicePortNode.cc; sourceTree = "<group>"; };
-		F77345E72E07227400DA5C1A /* SourceLoad.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SourceLoad.cc; sourceTree = "<group>"; };
-		F77345E82E07227400DA5C1A /* StringVector.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = StringVector.cc; sourceTree = "<group>"; };
-		F77345E92E07227400DA5C1A /* SwitchContactNode.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SwitchContactNode.cc; sourceTree = "<group>"; };
-		F77345EA2E07227400DA5C1A /* SwitchModel.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SwitchModel.cc; sourceTree = "<group>"; };
-		F77345EB2E07227400DA5C1A /* TAGContext.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TAGContext.cc; sourceTree = "<group>"; };
-		F77345EC2E07227400DA5C1A /* TedlCompAST.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TedlCompAST.cc; sourceTree = "<group>"; };
-		F77345ED2E07227400DA5C1A /* TedlDataBusTypeAST.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TedlDataBusTypeAST.cc; sourceTree = "<group>"; };
-		F77345EE2E07227400DA5C1A /* TedlDeviceAST.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TedlDeviceAST.cc; sourceTree = "<group>"; };
-		F77345EF2E07227400DA5C1A /* TedlDictionary.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TedlDictionary.cc; sourceTree = "<group>"; };
-		F77345F02E07227400DA5C1A /* TedlExchangeVerbAST.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TedlExchangeVerbAST.cc; sourceTree = "<group>"; };
-		F77345F12E07227400DA5C1A /* TedlExchangeVerbVisitor.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TedlExchangeVerbVisitor.cc; sourceTree = "<group>"; };
-		F77345F22E07227400DA5C1A /* tedlmain.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tedlmain.cc; sourceTree = "<group>"; };
-		F77345F32E07227400DA5C1A /* TedlSignalVerbAST.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TedlSignalVerbAST.cc; sourceTree = "<group>"; };
-		F77345F42E07227400DA5C1A /* TedlSignalVerbVisitor.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TedlSignalVerbVisitor.cc; sourceTree = "<group>"; };
-		F77345F52E07227400DA5C1A /* TedlSupport.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TedlSupport.cc; sourceTree = "<group>"; };
-		F77345F62E07227400DA5C1A /* TimerObject.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TimerObject.cc; sourceTree = "<group>"; };
-		F77345F72E07227400DA5C1A /* TPSHardware.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TPSHardware.cc; sourceTree = "<group>"; };
-		F77345F82E07227400DA5C1A /* TwoTerm.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TwoTerm.cc; sourceTree = "<group>"; };
-		F77345F92E07227400DA5C1A /* UutConnectorNode.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UutConnectorNode.cc; sourceTree = "<group>"; };
-		F77345FA2E07227400DA5C1A /* VerbAST.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VerbAST.cc; sourceTree = "<group>"; };
-		F77345FB2E07227400DA5C1A /* Vertex.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vertex.cc; sourceTree = "<group>"; };
-		F77345FC2E07227400DA5C1A /* VertexDictionary.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VertexDictionary.cc; sourceTree = "<group>"; };
-		F77345FD2E07227400DA5C1A /* VertexList.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VertexList.cc; sourceTree = "<group>"; };
-		F77345FE2E07227400DA5C1A /* VertexStack.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VertexStack.cc; sourceTree = "<group>"; };
-		F77345FF2E07227400DA5C1A /* VirtualDataBusAST.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VirtualDataBusAST.cc; sourceTree = "<group>"; };
-		F77346002E07227400DA5C1A /* VirtualResourceAST.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VirtualResourceAST.cc; sourceTree = "<group>"; };
-		F77346012E07227400DA5C1A /* Visitors.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Visitors.cc; sourceTree = "<group>"; };
-		F77346022E07227400DA5C1A /* Wire.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Wire.cc; sourceTree = "<group>"; };
 		F79405712E06582A00BBE333 /* AtlasCL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AtlasCL; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -283,6 +26,53 @@
 		F79405732E06582A00BBE333 /* AtlasCL */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = AtlasCL;
+			sourceTree = "<group>";
+		};
+		F79FE4CE2E0A476E006F0B19 /* Generated */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			name = Generated;
+			path = ../Generated;
+			sourceTree = SOURCE_ROOT;
+		};
+		F79FE4F02E0AF972006F0B19 /* FSM */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			name = FSM;
+			path = ../FSM;
+			sourceTree = SOURCE_ROOT;
+		};
+		F79FE4F22E0B026D006F0B19 /* bin */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			name = bin;
+			path = ../bin;
+			sourceTree = SOURCE_ROOT;
+		};
+		F79FE4FA2E0B026D006F0B19 /* Grammar */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			name = Grammar;
+			path = ../Grammar;
+			sourceTree = SOURCE_ROOT;
+		};
+		F79FE5772E0B026D006F0B19 /* Include */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			name = Include;
+			path = ../Include;
+			sourceTree = SOURCE_ROOT;
+		};
+		F79FE6642E0B026D006F0B19 /* Sources */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			name = Sources;
+			path = ../Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		F7C7C3BB2E0C982F00106AAA /* Data */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			name = Data;
+			path = ../Data;
+			sourceTree = SOURCE_ROOT;
+		};
+		F7EBF3312E0B14890027BF45 /* BuildSupport */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BuildSupport;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -298,322 +88,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F77344FF2E07227400DA5C1A /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				F77344FD2E07227400DA5C1A /* Dimension.db */,
-				F77344FE2E07227400DA5C1A /* Noun.db */,
-			);
-			name = Data;
-			path = ../Data;
-			sourceTree = SOURCE_ROOT;
-		};
-		F77345042E07227400DA5C1A /* FSM */ = {
-			isa = PBXGroup;
-			children = (
-				F77345002E07227400DA5C1A /* ResourceDataBus.sm */,
-				F77345012E07227400DA5C1A /* ResourceEventMonitor.sm */,
-				F77345022E07227400DA5C1A /* ResourceSensor.sm */,
-				F77345032E07227400DA5C1A /* ResourceSourceLoad.sm */,
-			);
-			name = FSM;
-			path = ../FSM;
-			sourceTree = SOURCE_ROOT;
-		};
-		F77345062E07227400DA5C1A /* Generated */ = {
-			isa = PBXGroup;
-			children = (
-				F77345052E07227400DA5C1A /* .gitignore */,
-			);
-			name = Generated;
-			path = ../Generated;
-			sourceTree = SOURCE_ROOT;
-		};
-		F773450E2E07227400DA5C1A /* Grammar */ = {
-			isa = PBXGroup;
-			children = (
-				F77345072E07227400DA5C1A /* atlas1.g */,
-				F77345082E07227400DA5C1A /* atlas2.g */,
-				F77345092E07227400DA5C1A /* comparison.g */,
-				F773450A2E07227400DA5C1A /* expression.g */,
-				F773450B2E07227400DA5C1A /* tedl.g */,
-				F773450C2E07227400DA5C1A /* tokens.g */,
-				F773450D2E07227400DA5C1A /* verbs.g */,
-			);
-			name = Grammar;
-			path = ../Grammar;
-			sourceTree = SOURCE_ROOT;
-		};
-		F773458B2E07227400DA5C1A /* Include */ = {
-			isa = PBXGroup;
-			children = (
-				F773450F2E07227400DA5C1A /* ActionAST.h */,
-				F77345102E07227400DA5C1A /* AdaptationModel.h */,
-				F77345112E07227400DA5C1A /* AdaptationModels.h */,
-				F77345122E07227400DA5C1A /* AdapterConnectorNode.h */,
-				F77345132E07227400DA5C1A /* AnalogResourceContext.h */,
-				F77345142E07227400DA5C1A /* AppendCompat.h */,
-				F77345152E07227400DA5C1A /* ArrayObject.h */,
-				F77345162E07227400DA5C1A /* Association.h */,
-				F77345172E07227400DA5C1A /* AST.h */,
-				F77345182E07227400DA5C1A /* astream.h */,
-				F77345192E07227400DA5C1A /* ASTVector.h */,
-				F773451A2E07227400DA5C1A /* ATEActionAST.h */,
-				F773451B2E07227400DA5C1A /* ATEFieldTypeAST.h */,
-				F773451C2E07227400DA5C1A /* ATEResourceAST.h */,
-				F773451D2E07227400DA5C1A /* atlas.h */,
-				F773451E2E07227400DA5C1A /* AtlasAST.h */,
-				F773451F2E07227400DA5C1A /* AtlasBox.h */,
-				F77345202E07227400DA5C1A /* AtlasDefinitions.h */,
-				F77345212E07227400DA5C1A /* AtlasLexer.h */,
-				F77345222E07227400DA5C1A /* AtlasStd.h */,
-				F77345232E07227400DA5C1A /* AtlasToken.h */,
-				F77345242E07227400DA5C1A /* BasicTypeAST.h */,
-				F77345252E07227400DA5C1A /* BFS.h */,
-				F77345262E07227400DA5C1A /* BuiltinFunctionAST.h */,
-				F77345272E07227400DA5C1A /* BusNode.h */,
-				F77345282E07227400DA5C1A /* CapacitiveEdge.h */,
-				F77345292E07227400DA5C1A /* Circuit.h */,
-				F773452A2E07227400DA5C1A /* CodeGenVisitor.h */,
-				F773452B2E07227400DA5C1A /* CompositeDevice.h */,
-				F773452C2E07227400DA5C1A /* ConfigurationModel.h */,
-				F773452D2E07227400DA5C1A /* ConfigurationModels.h */,
-				F773452E2E07227400DA5C1A /* Contact.h */,
-				F773452F2E07227400DA5C1A /* DataBus.h */,
-				F77345302E07227400DA5C1A /* DataBusActionAST.h */,
-				F77345312E07227400DA5C1A /* DataBusResourceContext.h */,
-				F77345322E07227400DA5C1A /* DataBusTypeAST.h */,
-				F77345332E07227400DA5C1A /* DataBusVerbAST.h */,
-				F77345342E07227400DA5C1A /* DebugEnv.h */,
-				F77345352E07227400DA5C1A /* DestinationMode.h */,
-				F77345362E07227400DA5C1A /* Device.h */,
-				F77345372E07227400DA5C1A /* DeviceModel.h */,
-				F77345382E07227400DA5C1A /* DeviceModels.h */,
-				F77345392E07227400DA5C1A /* DevicePath.h */,
-				F773453A2E07227400DA5C1A /* DevicePortNode.h */,
-				F773453B2E07227400DA5C1A /* DeviceReferencePortNode.h */,
-				F773453C2E07227400DA5C1A /* DFSContext.h */,
-				F773453D2E07227400DA5C1A /* Dictionary.h */,
-				F773453E2E07227400DA5C1A /* Edge.h */,
-				F773453F2E07227400DA5C1A /* EdgeFunc.h */,
-				F77345402E07227400DA5C1A /* EdgeList.h */,
-				F77345412E07227400DA5C1A /* Equivalence.h */,
-				F77345422E07227400DA5C1A /* EventMonitor.h */,
-				F77345432E07227400DA5C1A /* EventTypeAST.h */,
-				F77345442E07227400DA5C1A /* ExceptionTypes.h */,
-				F77345452E07227400DA5C1A /* ExecEnv.h */,
-				F77345462E07227400DA5C1A /* GateConnEventAST.h */,
-				F77345472E07227400DA5C1A /* Graph.h */,
-				F77345482E07227400DA5C1A /* GraphContext.h */,
-				F77345492E07227400DA5C1A /* Impedance.h */,
-				F773454A2E07227400DA5C1A /* InductiveEdge.h */,
-				F773454B2E07227400DA5C1A /* InitList.h */,
-				F773454C2E07227400DA5C1A /* InterfaceConnectorNode.h */,
-				F773454D2E07227400DA5C1A /* LabelAST.h */,
-				F773454E2E07227400DA5C1A /* LoadDevicePortNode.h */,
-				F773454F2E07227400DA5C1A /* MnemonicsDB.h */,
-				F77345502E07227400DA5C1A /* NestedParserBlackBox.h */,
-				F77345512E07227400DA5C1A /* NestedTokenStream.h */,
-				F77345522E07227400DA5C1A /* NodeFunc.h */,
-				F77345532E07227400DA5C1A /* NodeName.h */,
-				F77345542E07227400DA5C1A /* NounsModifiersDimensions.h */,
-				F77345552E07227400DA5C1A /* OperatorAST.h */,
-				F77345562E07227400DA5C1A /* PathNode.h */,
-				F77345572E07227400DA5C1A /* PathNodeList.h */,
-				F77345582E07227400DA5C1A /* PointSourceNode.h */,
-				F77345592E07227400DA5C1A /* ResettableIterator.h */,
-				F773455A2E07227400DA5C1A /* ResistiveEdge.h */,
-				F773455B2E07227400DA5C1A /* Resource.h */,
-				F773455C2E07227400DA5C1A /* ResourceAST.h */,
-				F773455D2E07227400DA5C1A /* ResourceContextBASE.h */,
-				F773455E2E07227400DA5C1A /* ResourceList.h */,
-				F773455F2E07227400DA5C1A /* ReverseMap.h */,
-				F77345602E07227400DA5C1A /* RWCompat.h */,
-				F77345612E07227400DA5C1A /* Scope.h */,
-				F77345622E07227400DA5C1A /* Sensor.h */,
-				F77345632E07227400DA5C1A /* SensorDevicePortNode.h */,
-				F77345642E07227400DA5C1A /* Set.h */,
-				F77345652E07227400DA5C1A /* Signal.h */,
-				F77345662E07227400DA5C1A /* SignalActionAST.h */,
-				F77345672E07227400DA5C1A /* SignalOperatorAST.h */,
-				F77345682E07227400DA5C1A /* SignalTypeAST.h */,
-				F77345692E07227400DA5C1A /* SignalVerbAST.h */,
-				F773456A2E07227400DA5C1A /* SimValues.h */,
-				F773456B2E07227400DA5C1A /* SourceDevicePortNode.h */,
-				F773456C2E07227400DA5C1A /* SourceLoad.h */,
-				F773456D2E07227400DA5C1A /* Std.h */,
-				F773456E2E07227400DA5C1A /* StringVector.h */,
-				F773456F2E07227400DA5C1A /* SwitchContactNode.h */,
-				F77345702E07227400DA5C1A /* SwitchModel.h */,
-				F77345712E07227400DA5C1A /* TAGContext.h */,
-				F77345722E07227400DA5C1A /* TedlCompAST.h */,
-				F77345732E07227400DA5C1A /* TedlDataBusTypeAST.h */,
-				F77345742E07227400DA5C1A /* TedlDefinitions.h */,
-				F77345752E07227400DA5C1A /* TedlDeviceAST.h */,
-				F77345762E07227400DA5C1A /* TedlDictionary.h */,
-				F77345772E07227400DA5C1A /* TedlExchangeVerbAST.h */,
-				F77345782E07227400DA5C1A /* TedlExchangeVerbVisitor.h */,
-				F77345792E07227400DA5C1A /* TedlLexer.h */,
-				F773457A2E07227400DA5C1A /* TedlSignalVerbAST.h */,
-				F773457B2E07227400DA5C1A /* TedlSignalVerbVisitor.h */,
-				F773457C2E07227400DA5C1A /* TedlStd.h */,
-				F773457D2E07227400DA5C1A /* TimerObject.h */,
-				F773457E2E07227400DA5C1A /* TPSHardware.h */,
-				F773457F2E07227400DA5C1A /* TwoTerm.h */,
-				F77345802E07227400DA5C1A /* Types.h */,
-				F77345812E07227400DA5C1A /* UutConnectorNode.h */,
-				F77345822E07227400DA5C1A /* VerbAST.h */,
-				F77345832E07227400DA5C1A /* Vertex.h */,
-				F77345842E07227400DA5C1A /* VertexDictionary.h */,
-				F77345852E07227400DA5C1A /* VertexList.h */,
-				F77345862E07227400DA5C1A /* VertexStack.h */,
-				F77345872E07227400DA5C1A /* VirtualDataBusAST.h */,
-				F77345882E07227400DA5C1A /* VirtualResourceAST.h */,
-				F77345892E07227400DA5C1A /* Visitors.h */,
-				F773458A2E07227400DA5C1A /* Wire.h */,
-			);
-			name = Include;
-			path = ../Include;
-			sourceTree = SOURCE_ROOT;
-		};
-		F77346032E07227400DA5C1A /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				F773458C2E07227400DA5C1A /* ActionAST.cc */,
-				F773458D2E07227400DA5C1A /* AdaptationModel.cc */,
-				F773458E2E07227400DA5C1A /* AdaptationModels.cc */,
-				F773458F2E07227400DA5C1A /* AdapterConnectorNode.cc */,
-				F77345902E07227400DA5C1A /* AnalogResourceContext.cc */,
-				F77345912E07227400DA5C1A /* ArrayObject.cc */,
-				F77345922E07227400DA5C1A /* Association.cc */,
-				F77345932E07227400DA5C1A /* astream.cc */,
-				F77345942E07227400DA5C1A /* ASTVector.cc */,
-				F77345952E07227400DA5C1A /* ATEActionAST.cc */,
-				F77345962E07227400DA5C1A /* ATEFieldTypeAST.cc */,
-				F77345972E07227400DA5C1A /* ATEResourceAST.cc */,
-				F77345982E07227400DA5C1A /* AtlasAST.cc */,
-				F77345992E07227400DA5C1A /* AtlasBox.cc */,
-				F773459A2E07227400DA5C1A /* AtlasDefinitions.cc */,
-				F773459B2E07227400DA5C1A /* atlasmain.cc */,
-				F773459C2E07227400DA5C1A /* AtlasSupport.cc */,
-				F773459D2E07227400DA5C1A /* AtlasToken.cc */,
-				F773459E2E07227400DA5C1A /* BasicTypeAST.cc */,
-				F773459F2E07227400DA5C1A /* BFS.cc */,
-				F77345A02E07227400DA5C1A /* BuiltinFunctionAST.cc */,
-				F77345A12E07227400DA5C1A /* BusNode.cc */,
-				F77345A22E07227400DA5C1A /* CapacitiveEdge.cc */,
-				F77345A32E07227400DA5C1A /* Circuit.cc */,
-				F77345A42E07227400DA5C1A /* CodeGenVisitor.cc */,
-				F77345A52E07227400DA5C1A /* CompositeDevice.cc */,
-				F77345A62E07227400DA5C1A /* ConfigurationModel.cc */,
-				F77345A72E07227400DA5C1A /* ConfigurationModels.cc */,
-				F77345A82E07227400DA5C1A /* Contact.cc */,
-				F77345A92E07227400DA5C1A /* DataBus.cc */,
-				F77345AA2E07227400DA5C1A /* DataBusActionAST.cc */,
-				F77345AB2E07227400DA5C1A /* DataBusResourceContext.cc */,
-				F77345AC2E07227400DA5C1A /* DataBusTypeAST.cc */,
-				F77345AD2E07227400DA5C1A /* DataBusVerbAST.cc */,
-				F77345AE2E07227400DA5C1A /* DebugEnv.cc */,
-				F77345AF2E07227400DA5C1A /* Device.cc */,
-				F77345B02E07227400DA5C1A /* DeviceModel.cc */,
-				F77345B12E07227400DA5C1A /* DeviceModels.cc */,
-				F77345B22E07227400DA5C1A /* DevicePath.cc */,
-				F77345B32E07227400DA5C1A /* DevicePortNode.cc */,
-				F77345B42E07227400DA5C1A /* DeviceReferencePortNode.cc */,
-				F77345B52E07227400DA5C1A /* DFSContext.cc */,
-				F77345B62E07227400DA5C1A /* Dictionary.cc */,
-				F77345B72E07227400DA5C1A /* Edge.cc */,
-				F77345B82E07227400DA5C1A /* EdgeFunc.cc */,
-				F77345B92E07227400DA5C1A /* EdgeList.cc */,
-				F77345BA2E07227400DA5C1A /* Equivalence.cc */,
-				F77345BB2E07227400DA5C1A /* EventMonitor.cc */,
-				F77345BC2E07227400DA5C1A /* EventTypeAST.cc */,
-				F77345BD2E07227400DA5C1A /* Exception.cc */,
-				F77345BE2E07227400DA5C1A /* ExceptionTypes.cc */,
-				F77345BF2E07227400DA5C1A /* ExecEnv.cc */,
-				F77345C02E07227400DA5C1A /* GateConnEventAST.cc */,
-				F77345C12E07227400DA5C1A /* getToken.cc */,
-				F77345C22E07227400DA5C1A /* Graph.cc */,
-				F77345C32E07227400DA5C1A /* GraphContext.cc */,
-				F77345C42E07227400DA5C1A /* Impedance.cc */,
-				F77345C52E07227400DA5C1A /* InductiveEdge.cc */,
-				F77345C62E07227400DA5C1A /* InitList.cc */,
-				F77345C72E07227400DA5C1A /* InterfaceConnectorNode.cc */,
-				F77345C82E07227400DA5C1A /* LabelAST.cc */,
-				F77345C92E07227400DA5C1A /* LoadDevicePortNode.cc */,
-				F77345CA2E07227400DA5C1A /* main.cc */,
-				F77345CB2E07227400DA5C1A /* MnemonicsDB.cc */,
-				F77345CC2E07227400DA5C1A /* NestedTokenStream.cc */,
-				F77345CD2E07227400DA5C1A /* NodeFunc.cc */,
-				F77345CE2E07227400DA5C1A /* NodeName.cc */,
-				F77345CF2E07227400DA5C1A /* NounsModifiersDimensions.cc */,
-				F77345D02E07227400DA5C1A /* OperatorAST.cc */,
-				F77345D12E07227400DA5C1A /* PathNode.cc */,
-				F77345D22E07227400DA5C1A /* PathNodeList.cc */,
-				F77345D32E07227400DA5C1A /* PointSourceNode.cc */,
-				F77345D42E07227400DA5C1A /* Queue.cc */,
-				F77345D52E07227400DA5C1A /* ResistiveEdge.cc */,
-				F77345D62E07227400DA5C1A /* Resource.cc */,
-				F77345D72E07227400DA5C1A /* ResourceAST.cc */,
-				F77345D82E07227400DA5C1A /* ResourceContextBASE.cc */,
-				F77345D92E07227400DA5C1A /* ResourceList.cc */,
-				F77345DA2E07227400DA5C1A /* ReverseMap.cc */,
-				F77345DB2E07227400DA5C1A /* Scope.cc */,
-				F77345DC2E07227400DA5C1A /* Search.cc */,
-				F77345DD2E07227400DA5C1A /* Sensor.cc */,
-				F77345DE2E07227400DA5C1A /* SensorDevicePortNode.cc */,
-				F77345DF2E07227400DA5C1A /* Set.cc */,
-				F77345E02E07227400DA5C1A /* Signal.cc */,
-				F77345E12E07227400DA5C1A /* SignalActionAST.cc */,
-				F77345E22E07227400DA5C1A /* SignalOperatorAST.cc */,
-				F77345E32E07227400DA5C1A /* SignalTypeAST.cc */,
-				F77345E42E07227400DA5C1A /* SignalVerbAST.cc */,
-				F77345E52E07227400DA5C1A /* SimulateCircuit.cc */,
-				F77345E62E07227400DA5C1A /* SourceDevicePortNode.cc */,
-				F77345E72E07227400DA5C1A /* SourceLoad.cc */,
-				F77345E82E07227400DA5C1A /* StringVector.cc */,
-				F77345E92E07227400DA5C1A /* SwitchContactNode.cc */,
-				F77345EA2E07227400DA5C1A /* SwitchModel.cc */,
-				F77345EB2E07227400DA5C1A /* TAGContext.cc */,
-				F77345EC2E07227400DA5C1A /* TedlCompAST.cc */,
-				F77345ED2E07227400DA5C1A /* TedlDataBusTypeAST.cc */,
-				F77345EE2E07227400DA5C1A /* TedlDeviceAST.cc */,
-				F77345EF2E07227400DA5C1A /* TedlDictionary.cc */,
-				F77345F02E07227400DA5C1A /* TedlExchangeVerbAST.cc */,
-				F77345F12E07227400DA5C1A /* TedlExchangeVerbVisitor.cc */,
-				F77345F22E07227400DA5C1A /* tedlmain.cc */,
-				F77345F32E07227400DA5C1A /* TedlSignalVerbAST.cc */,
-				F77345F42E07227400DA5C1A /* TedlSignalVerbVisitor.cc */,
-				F77345F52E07227400DA5C1A /* TedlSupport.cc */,
-				F77345F62E07227400DA5C1A /* TimerObject.cc */,
-				F77345F72E07227400DA5C1A /* TPSHardware.cc */,
-				F77345F82E07227400DA5C1A /* TwoTerm.cc */,
-				F77345F92E07227400DA5C1A /* UutConnectorNode.cc */,
-				F77345FA2E07227400DA5C1A /* VerbAST.cc */,
-				F77345FB2E07227400DA5C1A /* Vertex.cc */,
-				F77345FC2E07227400DA5C1A /* VertexDictionary.cc */,
-				F77345FD2E07227400DA5C1A /* VertexList.cc */,
-				F77345FE2E07227400DA5C1A /* VertexStack.cc */,
-				F77345FF2E07227400DA5C1A /* VirtualDataBusAST.cc */,
-				F77346002E07227400DA5C1A /* VirtualResourceAST.cc */,
-				F77346012E07227400DA5C1A /* Visitors.cc */,
-				F77346022E07227400DA5C1A /* Wire.cc */,
-			);
-			name = Sources;
-			path = ../Sources;
-			sourceTree = SOURCE_ROOT;
-		};
 		F79405682E06582A00BBE333 = {
 			isa = PBXGroup;
 			children = (
-				F77344FF2E07227400DA5C1A /* Data */,
-				F77345042E07227400DA5C1A /* FSM */,
-				F77345062E07227400DA5C1A /* Generated */,
-				F773450E2E07227400DA5C1A /* Grammar */,
-				F773458B2E07227400DA5C1A /* Include */,
-				F77346032E07227400DA5C1A /* Sources */,
+				F7C7C3BB2E0C982F00106AAA /* Data */,
+				F7EBF3312E0B14890027BF45 /* BuildSupport */,
 				F79405732E06582A00BBE333 /* AtlasCL */,
+				F79FE4F22E0B026D006F0B19 /* bin */,
+				F79FE4F02E0AF972006F0B19 /* FSM */,
+				F79FE4CE2E0A476E006F0B19 /* Generated */,
+				F79FE4FA2E0B026D006F0B19 /* Grammar */,
+				F79FE5772E0B026D006F0B19 /* Include */,
 				F79405722E06582A00BBE333 /* Products */,
+				F79FE6642E0B026D006F0B19 /* Sources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -645,6 +132,10 @@
 			);
 			fileSystemSynchronizedGroups = (
 				F79405732E06582A00BBE333 /* AtlasCL */,
+				F79FE4CE2E0A476E006F0B19 /* Generated */,
+				F79FE5772E0B026D006F0B19 /* Include */,
+				F79FE6642E0B026D006F0B19 /* Sources */,
+				F7EBF3312E0B14890027BF45 /* BuildSupport */,
 			);
 			name = AtlasCL;
 			packageProductDependencies = (

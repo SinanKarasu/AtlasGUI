@@ -17,10 +17,22 @@ ANTLR       = $(BIN)/antlr
 DLG         = $(BIN)/dlg
 SMC         = $(SMCPLUSPLUS)/smc
 
+PCCTS_SRCS := \
+  $(ANTLR_H)/AParser.cpp \
+  $(ANTLR_H)/ASTBase.cpp \
+  $(ANTLR_H)/ATokenBuffer.cpp \
+  $(ANTLR_H)/DLexerBase.cpp \
+  $(ANTLR_H)/PCCTSAST.cpp
+
+
+PCCTS_OBJS := $(patsubst $(ANTLR_H)/%.cpp,build/obj/%.o,$(PCCTS_SRCS))
+
+
 GRAMMAR	= ./Grammar
 GENERATED	= ./Generated
 SOURCES = ./Sources
 
+OBJDIR = build/obj
 
 CCC			= clang++
 
@@ -43,14 +55,14 @@ GRM_ATLAS	= $(addprefix $(GRAMMAR)/, \
 FSM_FILES := $(wildcard FSM/*.sm)
 FSM_BASENAMES := $(notdir $(basename $(FSM_FILES)))
 
-SMC_SPAWN_CC := $(FSM_BASENAMES:%=$(GENERATED)/%.cc)
+SMC_SPAWN_CC := $(FSM_BASENAMES:%=$(GENERATED)/%.cpp)
 SMC_SPAWN_H  := $(FSM_BASENAMES:%=$(GENERATED)/%.h)
-SMC_SPAWN_O  := $(FSM_BASENAMES:%=$(GENERATED)/%.o)
+SMC_SPAWN_O  := $(FSM_BASENAMES:%=$(OBJDIR)/%.o)
 
 
-$(GENERATED)/%.cc $(GENERATED)/%.h: FSM/%.sm
+$(GENERATED)/%.cpp $(GENERATED)/%.h: FSM/%.sm
 	@echo "Generating from $<"
-	$(SMC) -o $(GENERATED) $<
+	$(SMC) -x cpp -o $(GENERATED) $<
 
 # SMC_SPAWN_CC = $(SMC_SPAWN:%=$(GENERATED)/%.cc)
 # SMC_SPAWN_H  = $(SMC_SPAWN:%=$(GENERATED)/%.h)
@@ -223,9 +235,10 @@ FNAMES	+=	$(addprefix $(SOURCES)/,			\
 		CodeGenVisitor \
 		)
   
-OBJ	=	$(FNAMES:%=%.o)	
+# OBJECTS	=	$(FNAMES:%=%.o)	
+OBJECTS = $(addprefix $(OBJDIR)/, $(notdir $(FNAMES:=.o)))
 
-OBJ := $(sort $(OBJ))
+OBJECTS := $(sort $(OBJECTS))
 
 
 ################### Generated stuff #############################
@@ -257,15 +270,15 @@ install:
 	@echo "⚠️ Unknown action: $@"
 	@exit 0
 
-$(TARGET):	$(SMC_SPAWN_O)	$(OBJ) | bin
-	$(CCC) $(CCFLAGS) -o $(TARGET)  $(SMC_SPAWN_O) $(OBJ)  -ldl  -lpthread
+$(TARGET):	$(SMC_SPAWN_O)	$(OBJECTS) | bin
+	$(CCC) $(CCFLAGS) -o $(TARGET)  $(SMC_SPAWN_O) $(OBJECTS)  -ldl  -lpthread
 	
 
 # $(TARGET): | bin
 bin:
 	mkdir -p bin
 	
-$(OBJ): $(ANTLR_ATLAS_SPAWN) $(ANTLR_TEDL_SPAWN) $(SMC_SPAWN)
+$(OBJECTS): $(ANTLR_ATLAS_SPAWN) $(ANTLR_TEDL_SPAWN) $(SMC_SPAWN)
 
 ################## Atlas stuff ##################################
 
@@ -285,36 +298,66 @@ $(ANTLR_TEDL_SPAWN):		$(GRM_TEDL)
 
 $(SMC_SPAWN_O):	$(SMC_SPAWN_CC)
 
+
+build/obj/%.o: ../../DevTools/pccts/h/%.cpp
+	@mkdir -p $(dir $@)
+	$(CCC) $(CCFLAGS) -c $< -o $@
+
 #################################################################
 
 clean:
-	-rm -f $(OBJ) *.o $(GENERATED)/*.o *.pch core $(ANTLR_ATLAS_SPAWN) $(DLG_ATLAS_SPAWN)
+	-rm -f $(OBJECTS) *.o $(GENERATED)/*.o *.pch core $(ANTLR_ATLAS_SPAWN) $(DLG_ATLAS_SPAWN)
 	-rm -f $(ANTLR_TEDL_SPAWN) $(DLG_TEDL_SPAWN)
 	-rm -f $(SMC_SPAWN_CC) $(SMC_SPAWN_H)
 	-rm -rf Templates.DB ir.out .make.state
+	-rm -rf $(GENERATED)/*.cpp
 	
 scrub: clean
 	-rm -f $(TARGET)
 
 print-vars:
-	@echo "OBJ = $(OBJ)"
+	@echo "OBJECTS = $(OBJECTS)"
 	@echo "SMC_SPAWN_O = $(SMC_SPAWN_O)"
 
 
 check-dupes:
 	@echo "Checking for duplicate .o files..."
-	@echo "$(OBJ)" | tr ' ' '\n' | sort | uniq -d
+	@echo "$(OBJECTS)" | tr ' ' '\n' | sort | uniq -d
 
 .KEEP_STATE:
 
 .SUFFIXES: .cpp .sm
 
-.cpp.o:
-	$(CCC) -c $(CCFLAGS) -o $*.o $<
+# .cpp.o:
+# 	$(CCC) -c $(CCFLAGS) -o $*.o $<
+# 
+# .cc.o:
+# 	$(CCC) -c $(CCFLAGS) -o $*.o $<
+# 
 
-.cc.o:
-	$(CCC) -c $(CCFLAGS) -o $*.o $<
+$(OBJDIR)/%.o: %.cpp | $(OBJDIR)
+	$(CCC) -c $(CCFLAGS) -o $@ $<
+
+$(OBJDIR)/%.o: %.cc | $(OBJDIR)
+	$(CCC) -c $(CCFLAGS) -o $@ $<
+	
+$(OBJDIR)/%.o: $(GENERATED)/%.cpp
+	@mkdir -p $(OBJDIR)
+	$(CCC) $(CCFLAGS) -c $< -o $@
+
+$(OBJDIR)/%.o: $(GENERATED)/%.cc
+	@mkdir -p $(OBJDIR)
+	$(CCC) $(CCFLAGS) -c $< -o $@
+
+$(OBJDIR)/%.o: $(SOURCES)/%.cc
+	@mkdir -p $(OBJDIR)
+	$(CCC) $(CCFLAGS) -c $< -o $@
+
+$(OBJDIR)/%.o: $(SOURCES)/%.cpp
+	@mkdir -p $(OBJDIR)
+	$(CCC) $(CCFLAGS) -c $< -o $@
 
 
+	
 $(GENERATED):
 	mkdir -p $@

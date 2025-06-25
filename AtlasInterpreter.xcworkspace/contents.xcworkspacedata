@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:AtlasCL-Makefile.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:AtlasCL/AtlasCL.xcodeproj">
    </FileRef>
    <FileRef

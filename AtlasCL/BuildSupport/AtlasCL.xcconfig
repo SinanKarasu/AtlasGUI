@@ -1,0 +1,3 @@
+ANTLR= /GitHubDeveloper/DevTools/pccts/bin/antlr
+DLG = /GitHubDeveloper/DevTools/pccts/bin/dlg
+SMC = /GitHubDeveloper/DevTools/smc/smc
