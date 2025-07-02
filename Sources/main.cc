@@ -10,6 +10,11 @@
 #include	"astream.h"
 #include	"ExecEnv.h"
 
+
+#ifdef HELLO_FROM_XCCONFIG
+#warning "HELLO_FROM_XCCONFIG is defined"
+#endif
+
 TedlSymbolDictionary	deviceEquivalence;
 
 TedlSymbolDictionary	monitorEquivalence;
@@ -62,23 +67,25 @@ RWCString getQuotedConfStr(std::ifstream & conf){
 				return x;
 			}
 		}
-	} else {
-		return "";
 	}
-	
+	return "";
 }
 
-int skipStr(std::ifstream & conf,const RWCString & skip){
-	RWCString x;
-	if(!conf.eof()){
-		if(getConfStr(conf)==skip){
-			return 1;
-		} else {
-			return 0;
-		}
-	} else {
-		return 0;
-	}
+
+//int skipStr(std::ifstream & conf,const RWCString & skip){
+//	RWCString x;
+//	if(!conf.eof()){
+//		if(getConfStr(conf)==skip){
+//			return 1;
+//		} else {
+//			return 0;
+//		}
+//	}
+//	return 0;
+//}
+
+int skipStr(std::ifstream & conf, const RWCString & skip) {
+	return !conf.eof() && getConfStr(conf) == skip;
 }
 
 int ParseTpsContext(RWCString contextFile,TpsContext & tpsContext)
@@ -165,6 +172,7 @@ atlasmain( RWCString  v ,const RWCString & dbd,int mode);
 
 void * deviceDriverLibraryHandle=0;
 
+#ifndef ATLASCL
 int main( int argc, char* argv[] )
 {
 
@@ -264,5 +272,7 @@ int main( int argc, char* argv[] )
 	//}
 	
 }
+
+#endif
 
 

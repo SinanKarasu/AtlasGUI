@@ -324,6 +324,8 @@ Long	AST::getInteger( int indx ) const {
 	if ( ASTdown() ){
 		return ASTdown()->getInteger(indx); // transparent node
 	}
+	// This is the fall thru case. And should be handled correctly in the virtual hierarchy.
+	return 0; // should be kind of NaN?
 }
 
 double	AST::getDecimal( int indx ) const {
@@ -331,6 +333,7 @@ double	AST::getDecimal( int indx ) const {
 	if ( ASTdown() ){
 		return ASTdown()->getDecimal( indx ); // transparent node
 	}
+	return std::nan("");
 }
 
 
@@ -363,11 +366,11 @@ Long	AST::length	( int indx ) const	{ assert( 0 ); return 0; };
 const RWCString * AST::str() const	{ assert( 0 ); return 0; };
 const RWBitVec	* AST::vec() const	{ assert( 0 ); return 0; };
 
-void AST::preorder_action()
+void AST::preorder_action(void *)
 	{
 		std::cerr << typeid( *this ).name() << ", ";
 	}
-void AST::preorder_before_action()	// Going DOWN.
+void AST::preorder_before_action(void *)	// Going DOWN.
 	{
 		std::cerr << std::endl;
 		
@@ -379,7 +382,7 @@ void AST::preorder_before_action()	// Going DOWN.
 		std::cerr << "   (";
 		++indent;
 	}	
-void AST::preorder_after_action()	// Coming UP.
+void AST::preorder_after_action(void *)	// Coming UP.
 	{
 		std::cerr << std::endl;
 		--indent;
@@ -455,7 +458,7 @@ AST::ScaleDimension(const double x,const DimensionEntry * oldDim,const Dimension
 			return x/newDim->scale;	// from base dimension (e.g. SEC, V, A)
 		}
 		assert( oldDim || newDim);
-	
+		return std::nan("");
 	}
 
 

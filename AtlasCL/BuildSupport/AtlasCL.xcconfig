@@ -1,3 +1,9 @@
 ANTLR= /GitHubDeveloper/DevTools/pccts/bin/antlr
 DLG = /GitHubDeveloper/DevTools/pccts/bin/dlg
 SMC = /GitHubDeveloper/DevTools/smc/smc
+OTHER_CFLAGS = -DHELLO_FROM_XCCONFIG
+
+HEADER_SEARCH_PATHS = $(PROJECT_DIR)/../../../DevTools/pccts/h $(PROJECT_DIR)/Include $(PROJECT_DIR)/Generated
+
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) ATLASCL=1
+

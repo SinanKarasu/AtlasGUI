@@ -1926,10 +1926,9 @@ AST *	ArrayType::assign( AST * a )
 					return 0;
 				}
 			}
-		} else {
-			Error_Report( "Array Types are not assignment compatible (different lengths)", this );
-			return 0;
 		}
+		Error_Report( "Array Types are not assignment compatible (different lengths)", this );
+		return 0;
 	};
 	
 	

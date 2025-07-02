@@ -6,6 +6,14 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		F7C7C4092E0DB0C100106AAA /* DLexerBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F7C7C4042E0DB0C000106AAA /* DLexerBase.cpp */; };
+		F7C7C40A2E0DB0C100106AAA /* ASTBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F7C7C4052E0DB0C000106AAA /* ASTBase.cpp */; };
+		F7C7C40B2E0DB0C100106AAA /* AParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F7C7C4062E0DB0C000106AAA /* AParser.cpp */; };
+		F7C7C40C2E0DB0C100106AAA /* ATokenBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F7C7C4072E0DB0C100106AAA /* ATokenBuffer.cpp */; };
+		F7C7C40D2E0DB0C100106AAA /* PCCTSAST.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F7C7C4082E0DB0C100106AAA /* PCCTSAST.cpp */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		F794056F2E06582A00BBE333 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -20,6 +28,11 @@
 
 /* Begin PBXFileReference section */
 		F79405712E06582A00BBE333 /* AtlasCL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AtlasCL; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7C7C4042E0DB0C000106AAA /* DLexerBase.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = DLexerBase.cpp; path = ../../../DevTools/pccts/h/DLexerBase.cpp; sourceTree = "<group>"; };
+		F7C7C4052E0DB0C000106AAA /* ASTBase.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ASTBase.cpp; path = ../../../DevTools/pccts/h/ASTBase.cpp; sourceTree = "<group>"; };
+		F7C7C4062E0DB0C000106AAA /* AParser.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AParser.cpp; path = ../../../DevTools/pccts/h/AParser.cpp; sourceTree = "<group>"; };
+		F7C7C4072E0DB0C100106AAA /* ATokenBuffer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ATokenBuffer.cpp; path = ../../../DevTools/pccts/h/ATokenBuffer.cpp; sourceTree = "<group>"; };
+		F7C7C4082E0DB0C100106AAA /* PCCTSAST.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PCCTSAST.cpp; path = ../../../DevTools/pccts/h/PCCTSAST.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -91,6 +104,11 @@
 		F79405682E06582A00BBE333 = {
 			isa = PBXGroup;
 			children = (
+				F7C7C4062E0DB0C000106AAA /* AParser.cpp */,
+				F7C7C4052E0DB0C000106AAA /* ASTBase.cpp */,
+				F7C7C4072E0DB0C100106AAA /* ATokenBuffer.cpp */,
+				F7C7C4042E0DB0C000106AAA /* DLexerBase.cpp */,
+				F7C7C4082E0DB0C100106AAA /* PCCTSAST.cpp */,
 				F7C7C3BB2E0C982F00106AAA /* Data */,
 				F7EBF3312E0B14890027BF45 /* BuildSupport */,
 				F79405732E06582A00BBE333 /* AtlasCL */,
@@ -239,6 +257,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7C7C4092E0DB0C100106AAA /* DLexerBase.cpp in Sources */,
+				F7C7C40A2E0DB0C100106AAA /* ASTBase.cpp in Sources */,
+				F7C7C40B2E0DB0C100106AAA /* AParser.cpp in Sources */,
+				F7C7C40C2E0DB0C100106AAA /* ATokenBuffer.cpp in Sources */,
+				F7C7C40D2E0DB0C100106AAA /* PCCTSAST.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +270,8 @@
 /* Begin XCBuildConfiguration section */
 		F79405762E06582A00BBE333 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = F7EBF3312E0B14890027BF45 /* BuildSupport */;
+			baseConfigurationReferenceRelativePath = AtlasCL.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -309,6 +334,8 @@
 		};
 		F79405772E06582A00BBE333 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = F7EBF3312E0B14890027BF45 /* BuildSupport */;
+			baseConfigurationReferenceRelativePath = AtlasCL.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -364,21 +391,27 @@
 		};
 		F79405792E06582A00BBE333 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = F7EBF3312E0B14890027BF45 /* BuildSupport */;
+			baseConfigurationReferenceRelativePath = AtlasCL.xcconfig;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4HVP45GV3U;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
 			};
 			name = Debug;
 		};
 		F794057A2E06582A00BBE333 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = F7EBF3312E0B14890027BF45 /* BuildSupport */;
+			baseConfigurationReferenceRelativePath = AtlasCL.xcconfig;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4HVP45GV3U;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
 			};
 			name = Release;
 		};

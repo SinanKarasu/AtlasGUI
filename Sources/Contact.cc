@@ -106,9 +106,11 @@ Contact::Cost(DestinationMode mode)
 					}
 		Default			:
 					{
-						assert(0);
+						assert(false && "Unreachable code in Contact::Cost()");
+						// Optional, if compiler still complains:
 					}
 		}
+		std::abort();  // or: throw std::logic_error("Unreachable");assert(0);
 	}
 
 

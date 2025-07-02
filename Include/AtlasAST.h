@@ -107,9 +107,9 @@ public:
 	virtual const RWCString *str() const;
 	virtual const RWBitVec	*vec() const;
 
-	virtual	void		preorder_action();
-	virtual	void		preorder_before_action();
-	virtual	void		preorder_after_action();
+	virtual	void		preorder_action(void *  = NULL);
+	virtual	void		preorder_before_action(void *  = NULL);
+	virtual	void		preorder_after_action(void *  = NULL);
 
 	virtual astream&	operator>>	( astream& s );
 	virtual astream&	operator<<	( astream& s );

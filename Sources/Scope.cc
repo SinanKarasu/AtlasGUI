@@ -740,6 +740,7 @@ InnerScope::get_label(AST * E)
 		} else if(getPrev()){
 			return getPrev()->get_label(E);
 		}
+	return nullptr;
 	}
 
 

@@ -26,6 +26,14 @@ Capability::Capability(AST * a):m_ast(0)
 		m_by		= 0;
 		m_limit		= 0;
 	}
+/// Determines whether this Capability satisfies the requirement described by `c`.
+/// Returns -1 if this Capability subsumes `c` — that is, if its range fully contains
+/// the range required by `c` (numerically: min ≤ c.min and max ≥ c.max).
+/// Returns +1 otherwise.
+///
+/// Note: The result convention (-1 for "covers") is legacy behavior
+/// and may appear counterintuitive in non-numerical contexts.
+/// In anthopomorphic thinking, it means "Yes, c is inferior to me."
 
 int	Capability::compare( const Capability & c )
 	{
@@ -486,8 +494,8 @@ Resource::findCapability(Capability *c) {
         if ((*it)->compare(*c) == -1) {
             return *it;
         }
-        return 0;
     }
+	return nullptr;
 }
 
 #include	"NodeName.h"

@@ -1,6 +1,4 @@
 #pragma once
-//#define RWDEBUG 1
-#define RWBOUNDS_CHECK 1
 
 #include	<assert.h>
 #include	<fstream>

@@ -34,15 +34,33 @@ SOURCES = ./Sources
 
 OBJDIR = build/obj
 
-CCC			= clang++
+# CCC			= clang++
+# 
+# CFLAGS = -g -Wall -I. -I$(ANTLR_H) -I$(GENERATED)
+# CFLAGS += -IInclude
+# 
+# LDFLAGS = -lpthread
+# 
+# CC		= $(CCC)
+# CCFLAGS		=  -std=c++20 -Wall -g $(CFLAGS)
 
+
+# Compiler
+CCC = clang++
+
+# Include paths and base flags
 CFLAGS = -g -Wall -I. -I$(ANTLR_H) -I$(GENERATED)
 CFLAGS += -IInclude
 
+# Linker flags
 LDFLAGS = -lpthread
 
-CC		= $(CCC)
-CCFLAGS		=  -std=c++20 -Wall -g $(CFLAGS)
+# C++ compilation flags for .cc files
+CCFLAGS = -std=c++20 -Wall -g $(CFLAGS)
+
+# C++ compilation flags for .cpp files (suppress unused warnings)
+CPPFLAGS = -std=c++20 $(CFLAGS) -g -Wno-unused-parameter -Wno-unused-variable 
+
 
 #######################Atlas stuff #################
 
@@ -336,14 +354,14 @@ check-dupes:
 # 
 
 $(OBJDIR)/%.o: %.cpp | $(OBJDIR)
-	$(CCC) -c $(CCFLAGS) -o $@ $<
+	$(CCC) -c $(CPPFLAGS) -o $@ $<
 
 $(OBJDIR)/%.o: %.cc | $(OBJDIR)
 	$(CCC) -c $(CCFLAGS) -o $@ $<
 	
 $(OBJDIR)/%.o: $(GENERATED)/%.cpp
 	@mkdir -p $(OBJDIR)
-	$(CCC) $(CCFLAGS) -c $< -o $@
+	$(CCC) $(CPPFLAGS) -c $< -o $@
 
 $(OBJDIR)/%.o: $(GENERATED)/%.cc
 	@mkdir -p $(OBJDIR)
@@ -355,7 +373,7 @@ $(OBJDIR)/%.o: $(SOURCES)/%.cc
 
 $(OBJDIR)/%.o: $(SOURCES)/%.cpp
 	@mkdir -p $(OBJDIR)
-	$(CCC) $(CCFLAGS) -c $< -o $@
+	$(CCC) $(CPPFLAGS) -c $< -o $@
 
 
 	

@@ -173,9 +173,10 @@ Long ProcedureLabel::getInteger(int indx) const
 	{
 		if(indx==0){
 			return paramcount;
-		} else if(indx=1){
+		} else if(indx==1){
 			return resultcount;
 		}
+		return 0;
 	}
 
 

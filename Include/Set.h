@@ -16,7 +16,7 @@ class Set : public BitVec {
                 return static_cast<int>(i); // Return the index of the first set bit
             }
         }
-        return std::string::npos; // Return -1 if no set bit is found
+        return -1; // Return -1 if no set bit is found
     }
 };
 

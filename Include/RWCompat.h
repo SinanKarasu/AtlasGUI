@@ -6,7 +6,6 @@
 #define RWBoolean bool
 #define RWInteger int
 #define RWDEBUG(x)
-#define RWBOUNDS_CHECK 0
 #define RWDEFAULT_CAPACITY 0
 
 // --- Types ---
@@ -23,56 +22,53 @@
 #include <ostream>
 
 typedef std::string RWCString;
-typedef std::regex RWCRegexp;
+typedef std::regex  RWCRegexp;
 
 // --- Placeholder Classes ---
 class RWCollectable {};
 class RWFile {};
 
-
 // --- Legacy Rogue Wave compatibility shims ---
 
-typedef long long Long;
-//using RWBitVec = std::vector<bool>;
+typedef long Long;
+// using RWBitVec = std::vector<bool>;
 
-template<typename T>
+template <typename T>
 using RWTValVector = std::vector<T>;
 
-template<typename T>
+template <typename T>
 using RWTValSlist = std::list<T>;
 
-template<typename K, typename V>
+template <typename K, typename V>
 using RWTValHashDictionary = std::unordered_map<K, V>;
 
-template<typename T>
+template <typename T>
 using RWTValHashSet = std::unordered_set<T>;
 
-template<typename T>
+template <typename T>
 using RWTPtrSlist = std::forward_list<std::shared_ptr<T>>;
 
-template<typename T>
+template <typename T>
 using RWTValSlistIterator = typename std::list<T>::iterator;
 
-template<typename T>
+template <typename T>
 using RWTPtrSlistIterator = typename RWTPtrSlist<T>::iterator;
 
-template<typename K, typename V>
+template <typename K, typename V>
 using RWTValHashDictionaryIterator = typename RWTValHashDictionary<K, V>::iterator;
 
-template<typename T>
+template <typename T>
 using RWTValOrderedVector = std::vector<T>;
 
-template<typename T, typename Container = std::deque<T>>
+template <typename T, typename Container = std::deque<T>>
 using RWTStack = std::stack<T, Container>;
 
-inline bool ends_with(const std::string& str, const std::string& suffix) {
+inline bool ends_with(const std::string &str, const std::string &suffix) {
     return str.size() >= suffix.size() &&
            str.compare(str.size() - suffix.size(), suffix.size(), suffix) == 0;
 }
 
-
-
-inline std::vector<bool> bitwise_not(const std::vector<bool>& bits) {
+inline std::vector<bool> bitwise_not(const std::vector<bool> &bits) {
     std::vector<bool> result(bits.size());
     for (size_t i = 0; i < bits.size(); ++i) {
         result[i] = !bits[i];
@@ -85,24 +81,23 @@ inline std::vector<bool> bitwise_not(const std::vector<bool>& bits) {
 #include <algorithm>
 
 class BitVec {
-public:
+  public:
     using Storage = std::vector<bool>;
 
     BitVec() = default;
     explicit BitVec(size_t n, bool val = false) : data(n, val) {}
-    BitVec(const Storage& vec) : data(vec) {}
-    BitVec(Storage&& vec) noexcept : data(std::move(vec)) {}
+    BitVec(const Storage &vec) : data(vec) {}
+    BitVec(Storage &&vec) noexcept : data(std::move(vec)) {}
 
     size_t size() const { return data.size(); }
-    void resize(size_t n, bool val = false) { data.resize(n, val); }
+    void   resize(size_t n, bool val = false) { data.resize(n, val); }
 
     bool operator[](size_t i) const { return data[i]; }
-    //bool& operator[](size_t i) { return data[i]; }
+    // bool& operator[](size_t i) { return data[i]; }
     Storage::reference operator[](size_t i) { return data[i]; }
 
-
-    const Storage& vec() const { return data; }
-    Storage& vec() { return data; }
+    const Storage &vec() const { return data; }
+    Storage       &vec() { return data; }
 
     // Unary NOT
     BitVec operator!() const {
@@ -113,60 +108,66 @@ public:
     }
 
     // Bitwise AND
-    BitVec operator&(const BitVec& other) const {
+    BitVec operator&(const BitVec &other) const {
         size_t n = std::min(size(), other.size());
         BitVec result(n);
-        for (size_t i = 0; i < n; ++i)
-            result[i] = data[i] & other.data[i];
+        for (size_t i = 0; i < n; ++i) {
+            result[i] = static_cast<bool>(int(data[i]) & int(other.data[i]));
+        }
         return result;
     }
 
-    BitVec& operator&=(const BitVec& other) {
+    BitVec &operator&=(const BitVec &other) {
         size_t n = std::min(size(), other.size());
         resize(n); // optional; ensures no out-of-bounds
-        for (size_t i = 0; i < n; ++i)
-            data[i] = data[i] & other.data[i];
+        for (size_t i = 0; i < n; ++i) {
+            data[i] = static_cast<bool>(int(data[i]) & int(other.data[i]));
+        }
+
         return *this;
     }
 
     // Bitwise OR
-    BitVec operator|(const BitVec& other) const {
+    BitVec operator|(const BitVec &other) const {
         size_t n = std::min(size(), other.size());
         BitVec result(n);
-        for (size_t i = 0; i < n; ++i)
-            result[i] = data[i] | other.data[i];
+        for (size_t i = 0; i < n; ++i) {
+            result[i] = static_cast<bool>(int(data[i]) | int(other.data[i]));
+        }
         return result;
     }
 
-    BitVec& operator|=(const BitVec& other) {
+    BitVec &operator|=(const BitVec &other) {
         size_t n = std::min(size(), other.size());
         resize(n);
-        for (size_t i = 0; i < n; ++i)
-            data[i] = data[i] | other.data[i];
+        for (size_t i = 0; i < n; ++i) {
+            data[i] = static_cast<bool>(int(data[i]) | int(other.data[i]));
+        }
         return *this;
     }
 
     // Bitwise XOR
-    BitVec operator^(const BitVec& other) const {
+    BitVec operator^(const BitVec &other) const {
         size_t n = std::min(size(), other.size());
         BitVec result(n);
-        for (size_t i = 0; i < n; ++i)
-            result[i] = data[i] ^ other.data[i];
+        for (size_t i = 0; i < n; ++i) {
+            result[i] = static_cast<bool>(int(data[i]) ^ int(other.data[i]));
+        }
         return result;
     }
 
-    BitVec& operator^=(const BitVec& other) {
+    BitVec &operator^=(const BitVec &other) {
         size_t n = std::min(size(), other.size());
         resize(n);
-        for (size_t i = 0; i < n; ++i)
-            data[i] = data[i] ^ other.data[i];
+        for (size_t i = 0; i < n; ++i) {
+            data[i] = static_cast<bool>(int(data[i]) ^ int(other.data[i]));
+        }
         return *this;
     }
 
-private:
+  private:
     Storage data;
 };
-
 
 using RWBitVec = BitVec;
 
@@ -174,11 +175,10 @@ using RWBitVec = BitVec;
 #include <cctype>
 #include <string>
 
-inline void toUpper(std::string& str) {
+inline void toUpper(std::string &str) {
     std::transform(str.begin(), str.end(), str.begin(),
                    [](unsigned char c) { return std::toupper(c); });
 }
-
 
 // std::ostream& operator<<(std::ostream& os, const BitVec& bv) {
 //     for (size_t i = 0; i < bv.size(); ++i) {
@@ -186,9 +186,3 @@ inline void toUpper(std::string& str) {
 //     }
 //     return os;
 // }
-
-
-
-
-
-

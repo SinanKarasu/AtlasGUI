@@ -232,11 +232,10 @@ VirtualExchange::check( AST * a )
 	{
 		if(a){
 			return 0;
-		} else {
-			StringAST models("~MODELS");
-			AST * ast=ASTdown()->ASTright()->data(&models);
-			ASTdown()->check(ast);
 		}
+		StringAST models("~MODELS");
+		AST * ast=ASTdown()->ASTright()->data(&models);
+		return ASTdown()->check(ast);
 	}
 
 AST *

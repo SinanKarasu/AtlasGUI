@@ -104,14 +104,14 @@ ATEDeviceFunction::eval(AST * a)
 	{
 		if(!a){
 			return this;
-		} else {
-			if(m_StateMachine){
-				m_StateMachine->eval(a);
-				return ASTdown();
-			} else {
-				ATEResourceAST::eval(a);
-			}
 		}
+	
+		if(m_StateMachine){
+			m_StateMachine->eval(a);
+			return ASTdown();
+		}
+		
+		return ATEResourceAST::eval(a);
 	}
 
 
