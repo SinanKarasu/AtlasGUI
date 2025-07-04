@@ -60,4 +60,5 @@ atlas
 *.xcuserdata/
 *.xcdebugger/
 *.xcuserdatad/
+xcshareddata/
 
