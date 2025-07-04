@@ -5,59 +5,28 @@
 //  Created by Sinan Karasu on 6/20/25.
 //
 
-//#include <iostream>
-//
-//int main(int argc, const char * argv[]) {
-//	// insert code here...
-//	std::cout << "Hello, World!\n";
-//	return EXIT_SUCCESS;
-//}
-
-
-//
-//  main.cpp
-//  AtlasCL
-//
-//  Created by Sinan Karasu on 6/13/25.
-//
-
-
-// We'll set up AtlasCL to write messages to a pipe, and have AtlasGUI read and display them.
-
-// Step 1: In AtlasCL/main.cpp
-#include <iostream>
-#include <thread>
-#include <chrono>
-
-using namespace std;
-
-//int main(int argc, const char * argv[]) {
-//	// insert code here...
-//	int count = 0;
-//	while (true) {
-//		cout << "[AtlasCL] Message " << count++ << endl;
-//		cout.flush();
-//		this_thread::sleep_for(chrono::seconds(2));
-//	}
-//	return EXIT_SUCCESS;
-//}
-//
-//
-// main.cc — merged version for AtlasCL and GUI heartbeat
-
 #include <iostream>
 #include <thread>
 #include <chrono>
 #include <atomic>
 
-// Dummy placeholder for actual interpreter logic
-void runInterpreter() {
-	std::cout << "[AtlasCL] Interpreter is running..." << std::endl;
-	std::this_thread::sleep_for(std::chrono::seconds(5));
-	std::cout << "[AtlasCL] Interpreter finished." << std::endl;
-}
+#include "Visitors.h"
+#include "astream.h"
+#include "TpsContext.h"
+#include <dlfcn.h>
 
-// Heartbeat thread: emits periodic pulses for GUI to detect
+TedlSymbolDictionary deviceEquivalence;
+TedlSymbolDictionary monitorEquivalence;
+ExecEnv execEnv;
+std::ofstream debugtrace;
+astream sout;
+class TedlParser;
+TedlParser *TEDL = 0;
+ASTBase *TEDLroot = 0;
+void *deviceDriverLibraryHandle = 0;
+extern int G_Equivalence_insantiated;
+
+// Heartbeat thread
 void startHeartbeat(std::atomic<bool>& running) {
 	while (running) {
 		std::cout << "[Heartbeat] alive" << std::endl;
@@ -68,18 +37,64 @@ void startHeartbeat(std::atomic<bool>& running) {
 	std::cout.flush();
 }
 
+int mainFunction(int argc, char* argv[]) {
+	evalVisitor go;
+	TpsContext tpsContext;
+	
+	if (argc <= 1) {
+		execEnv.help();
+		return 0;
+	}
+	execEnv.ProcessArgs(argc - 1, &argv[1]);
+	
+	std::string dbd;
+	if (execEnv.dbDirectory()) {
+		dbd = std::string(execEnv.dbDirectory()) + "/";
+	} else {
+		std::string pathcopy(argv[0]);
+		dbd = pathcopy.substr(pathcopy.find_last_of("/\\") + 1) + "/";
+		if (dbd.length() == 0) dbd = ".";
+	}
+	
+	debugtrace.open("debug.log");
+	sout.open("output.log");
+	
+	ParseTpsContext(execEnv.cfFile(), tpsContext);
+	
+	if (!tpsContext.DeviceDriver.empty()) {
+		deviceDriverLibraryHandle = dlopen(tpsContext.DeviceDriver.c_str(), RTLD_LAZY);
+		if (!deviceDriverLibraryHandle) {
+			std::cerr << "Device Library Error " << dlerror() << std::endl;
+		}
+	}
+	
+	if (tpsContext.AteConfiguration != "NONE")
+		tedlmain(tpsContext.AteConfiguration, dbd);
+	
+	for (const auto& module : tpsContext.AdapterConfiguration)
+		if (module != "NONE") tedlmain(module, dbd);
+	
+	for (const auto& module : tpsContext.AtlasModules)
+		if (module != "NONE") atlasmain(module, dbd, 1);
+	
+	AST *Root = atlasmain(tpsContext.AtlasTps, dbd, 0);
+	if (Root) {
+		go.Execute(Root, 0);
+		return 0;
+	} else {
+		std::cerr << " ***************aborting due to errors*****" << std::endl;
+		return 1;
+	}
+}
+
 int main(int argc, char* argv[]) {
 	std::atomic<bool> heartbeatRunning{true};
-	
-	// Launch heartbeat thread
 	std::thread hb(startHeartbeat, std::ref(heartbeatRunning));
 	
-	// Run main interpreter logic
-	runInterpreter();
+	int result = mainFunction(argc, argv);
 	
-	// Stop heartbeat and join
 	heartbeatRunning = false;
 	hb.join();
 	
-	return 0;
+	return result;
 }

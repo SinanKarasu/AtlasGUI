@@ -1,4 +1,3 @@
-
 #include	<stdlib.h>
 #include	"AtlasAST.h"
 #include	"AtlasStd.h"
@@ -288,7 +287,7 @@ AtlasParser::getTokenLabel(const ANTLRChar * name,const Scope * s) const
 		if(!cscope) return 0;
 		if(!(x=cscope->findSymbolValue(name))){
 			if(!cscope->isParameterMode()){
-				if(cscope=cscope->getPrev()){
+				if((cscope=cscope->getPrev())){
 					x=getTokenLabel(name,cscope);
 				}
 			}
@@ -303,7 +302,7 @@ AtlasParser::getTokenLabelGlobal( const ANTLRChar * name, const Scope * s ) cons
 		if(s)cscope=s;else cscope=scope;
 		if(cscope){
 			if(!(x=cscope->findSymbolValue(name))){
-				if(cscope=cscope->getPrev()){
+				if((cscope=cscope->getPrev())){
 					x=getTokenLabelGlobal(name,cscope);
 				}
 			}
@@ -318,7 +317,7 @@ AtlasParser::getEventIndicatorLabel( const ANTLRChar * name, const Scope * s ) c
 		if(s)cscope=s;else cscope=scope;
 		if(!cscope)return 0;
 		if(!(x=cscope->findEventIndicator(name))){
-			if(cscope=cscope->getPrev()){
+			if((cscope=cscope->getPrev())){
 				x=getEventIndicatorLabel(name,cscope);
 			}
 		}
@@ -607,7 +606,7 @@ AtlasParser::verifyGoToTarget( TargetStatement * unresolved, TargetStatement * t
 AST *
 AtlasParser::verifyLeaveResumeTarget( AST * snum, EntryType lt )
 	{
-		const Fstatno * fstatno;
+		//const Fstatno * fstatno;
 		AST * ret;
 		
 		for( int i=ContextDepth; i>=0; i-- ){
@@ -1092,7 +1091,7 @@ AtlasParser::theNounEntry(const ANTLRTokenPtr  nid,int & howmany)
 	std::string noun=nid->getText();
 	howmany=1;
 	while(1){
-		if(nounEntry=mnemonicsDB->theNounEntry(noun)){
+		if((nounEntry=mnemonicsDB->theNounEntry(noun))){
 			break;
 		} else if(howmany>=8){	// arbitrary
 			break;
@@ -1107,3 +1106,4 @@ AtlasParser::theNounEntry(const ANTLRTokenPtr  nid,int & howmany)
 		return 0;
 	}
 }
+

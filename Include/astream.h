@@ -45,6 +45,17 @@ inline astream &operator<<(astream &s, const BitVec &x) {
     return s << &x;
 }
 
+inline astream& operator<<(astream& s, const char* str) {
+	static_cast<std::ostream&>(s) << str;
+	return s;
+}
+
+inline astream& operator<<(astream& s, const std::string& str) {
+	static_cast<std::ostream&>(s) << str;
+	return s;
+}
+
+
 astream &operator>>(astream &s, AST *a);
 // astream		&operator<<( astream &s, AST *a );
 

@@ -5,7 +5,7 @@ class ExecEnv;
 
 typedef void (ExecEnv::*p)(char *s, char *t);
 
-typedef struct Opt {
+struct Opt {
 	const	char           *option;
 	int             arg;
 	p          process;

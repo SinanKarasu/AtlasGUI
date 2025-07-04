@@ -46,7 +46,7 @@ AST *	LineAction::eval( AST * a )
 			x = ASTright();	// pass it to right...
 			return x->eval(x);
 		}else{
-			if ( x=ASTdown() ){
+			if ( (x=ASTdown())){
 				try{
 					x=x->eval(a);
 					if ( x ){
@@ -348,10 +348,12 @@ AST *	TextOutputAction::eval( AST * ofileAST )
 		astream& s = *(ofileAST->getStream());
 		
 		if ( ofileAST->getInteger() )	// if enabled
-			if ( fmtAST != 0 )
+			if ( fmtAST != 0 ) {
 				s << fmtAST->eval() << argAST->eval();
-			else
+			} else {
+				auto x = argAST;
 				s << argAST->eval();
+			}
 		else
 			Error_Report( "Attempting to write to file that is not enabled." );
 

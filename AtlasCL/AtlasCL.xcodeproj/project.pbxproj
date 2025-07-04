@@ -230,7 +230,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/bash\n# Generate FSM Code\necho \"🧠 Generating FSM code from .sm files...\"\n\nFSM_DIR=\"${SRCROOT}/FSM\"\nGEN_DIR=\"${SRCROOT}/Generated\"\nSMC_EXEC=\"${SRCROOT}/../smcplusplus/smc\"  # adjust if installed elsewhere\n\nmkdir -p \"$GEN_DIR\"\n\nfind \"$FSM_DIR\" -name '*.sm' | while read -r smfile; do\n    echo \"  🌀 Processing $(basename \"$smfile\")\"\n    \"$SMC_EXEC\" -o \"$GEN_DIR\" \"$smfile\" || exit 1\ndone\n\necho \"✅ SMC generation complete!\"\n\n";
+			shellScript = "#!/bin/bash\n# Generate FSM Code\necho \"🧠 Generating FSM code from .sm files...\"\n\nFSM_DIR=\"${SRCROOT}/../FSM\"\nGEN_DIR=\"${SRCROOT}/../Generated\"\nSMC_EXEC=\"${SRCROOT}/../../../DevTools/smcplusplus/smc\" # adjust if installed elsewhere\n\nmkdir -p \"$GEN_DIR\"\n\nfind \"$FSM_DIR\" -name '*.sm' | while read -r smfile; do\n    echo \"  🌀 Processing $(basename \"$smfile\")\"\n    \"$SMC_EXEC\" -o \"$GEN_DIR\" \"$smfile\" || exit 1\ndone\n\necho \"✅ SMC generation complete!\"\n";
 		};
 		F78CAC792E07250800DDB894 /* Generate Grammar Parsers */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -248,7 +248,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/bash\n# Generate Grammar Parsers\nset -e\n\nANTLR=\"${SRCROOT}/../../../DevTools/pccts/bin/antlr\"\nDLG=\"${SRCROOT}/../../../DevTools/pccts/bin/dlg\"\nSMC=\"${SRCROOT}/../../../DevTools/smc/smc\"\n\nGRAMMAR_DIR=\"${SRCROOT}/../Grammar\"\nFSM_DIR=\"${SRCROOT}/../FSM\"\nOUTPUT_DIR=\"${SRCROOT}/../Generated\"\n\nmkdir -p \"$OUTPUT_DIR\"\n\necho \"📘 Generating grammar sources...\"\ncd \"$GRAMMAR_DIR\" || { echo \"❌ Could not cd to $GRAMMAR_DIR\"; exit 1; }\n\n$ANTLR -ge -gt -CC -ft AtlasTokens.h -fl AtlasDLG.dlg -k 4 -prc on -mrhoist on -rl 80000 \\\n    tokens.g atlas1.g verbs.g atlas2.g expression.g comparison.g -o ${OUTPUT_DIR}\n\n$DLG -C2 -CC -ci -cl AtlasDLG AtlasDLG.dlg -o ${OUTPUT_DIR}\n\necho \"📘 Generating TEDL grammar...\"\n$ANTLR -CC -gxt -ft AtlasTokens.h -gx -gt -w2 -k 2 -prc on -rl 80000 tokens.g tedl.g -o ${OUTPUT_DIR}\n# $DLG -C2 -CC -ci -cl TedlDLG TedlDLG.dlg  # Uncomment if TedlDLG.dlg exists\n\necho \"✅ Grammar generation complete.\"\n\n";
+			shellScript = "#!/bin/bash\n# Generate Grammar Parsers\nset -e\n\nANTLR=\"${SRCROOT}/../../../DevTools/pccts/bin/antlr\"\nDLG=\"${SRCROOT}/../../../DevTools/pccts/bin/dlg\"\nSMC=\"${SRCROOT}/../../../DevTools/smcplusplus/smc\"\n\nGRAMMAR_DIR=\"${SRCROOT}/../Grammar\"\nFSM_DIR=\"${SRCROOT}/../FSM\"\nOUTPUT_DIR=\"${SRCROOT}/../Generated\"\n\nmkdir -p \"$OUTPUT_DIR\"\n\necho \"📘 Generating grammar sources...\"\ncd \"$GRAMMAR_DIR\" || { echo \"❌ Could not cd to $GRAMMAR_DIR\"; exit 1; }\n\n$ANTLR -ge -gt -CC -ft AtlasTokens.h -fl AtlasDLG.dlg -k 4 -prc on -mrhoist on -rl 80000 \\\n    tokens.g atlas1.g verbs.g atlas2.g expression.g comparison.g -o ${OUTPUT_DIR}\n\n##$DLG -C2 -CC -ci -cl AtlasDLG AtlasDLG.dlg -o ${OUTPUT_DIR}\n\necho \"📘 Running DLG...\"\n$DLG -C2 -CC -ci -cl AtlasDLG \"${OUTPUT_DIR}/AtlasDLG.dlg\" -o \"${OUTPUT_DIR}\"\n\n\necho \"📘 Generating TEDL grammar...\"\n$ANTLR -CC -gxt -ft AtlasTokens.h -gx -gt -w2 -k 2 -prc on -rl 80000 tokens.g tedl.g -o ${OUTPUT_DIR}\n# $DLG -C2 -CC -ci -cl TedlDLG TedlDLG.dlg  # Uncomment if TedlDLG.dlg exists\n\necho \"✅ Grammar generation complete.\"\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

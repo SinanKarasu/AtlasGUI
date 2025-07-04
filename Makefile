@@ -59,7 +59,7 @@ LDFLAGS = -lpthread
 CCFLAGS = -std=c++20 -Wall -g $(CFLAGS)
 
 # C++ compilation flags for .cpp files (suppress unused warnings)
-CPPFLAGS = -std=c++20 $(CFLAGS) -g -Wno-unused-parameter -Wno-unused-variable 
+CPPFLAGS = -std=c++20 $(CFLAGS) -g -Wno-unused-parameter -Wno-unused-variable -Wno-unused-but-set-variable -Wno-unused-label
 
 
 #######################Atlas stuff #################
@@ -144,6 +144,7 @@ FNAMES	+=	$(addprefix $(SOURCES)/,			\
 		VerbAST				\
 		atlasmain			\
 		main				\
+		TpsContext	\
 		Resource			\
 		ResourceContextBASE		\
 		AnalogResourceContext		\

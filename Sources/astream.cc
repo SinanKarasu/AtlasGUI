@@ -66,6 +66,12 @@ astream	&operator<<( astream &s, AST * a )
 		return a->operator<<( s );
 	}
 
+//astream& operator<<(astream& s, AST* a)
+//{
+//	if (a) return a->operator<<(s);
+//	return s << "(null AST)";
+//}
+
 astream& operator>>(astream& s, BitVec& b) {
     // Define how you want BitVec to be read from astream
     // For now, a stub to get it linking:
