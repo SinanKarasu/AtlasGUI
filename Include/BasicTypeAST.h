@@ -210,8 +210,8 @@ class CharClassType: public BasicTypeAST{
 
 class StringOfCharType: public BasicTypeAST{
 	public:
-		StringOfCharType( ANTLRTokenPtr    p=0, int len=0 );
-		StringOfCharType( const RWCString *str, int len=0 );
+		StringOfCharType( ANTLRTokenPtr    p=0, size_t len=0 );
+		StringOfCharType( const RWCString *str, size_t len=0 );
 		virtual ~StringOfCharType();
 		virtual AST *	eval	( AST   *  a = 0 );
 		virtual AST *	assign	( AST   *  a     );
@@ -232,8 +232,8 @@ class StringOfCharType: public BasicTypeAST{
 	private:
 		ArrayObject *	_data;
 		RWCString *	_str;
-		int		_max_length;
-		int		_dyn_length;
+		size_t		_max_length;
+		size_t		_dyn_length;
 		void		_assign( const RWCString *s );
 };
 
@@ -302,8 +302,8 @@ class BitType: public BasicTypeAST{
 
 class StringOfBitType: public BasicTypeAST{
 	public:
-		StringOfBitType(ANTLRTokenPtr p=0,int len=0);
-		StringOfBitType(const RWBitVec * data=0,int len=0);
+		StringOfBitType(ANTLRTokenPtr p=0,size_t len=0);
+		StringOfBitType(const RWBitVec * data=0,size_t len=0);
 		virtual ~StringOfBitType();
 
 		virtual AST *	eval	( AST   *  a = 0 );
@@ -325,8 +325,8 @@ class StringOfBitType: public BasicTypeAST{
 	private:
 		ArrayObject *	_data;
 		RWBitVec *	_vec;
-		int		_max_length;
-		int		_dyn_length;
+		size_t		_max_length;
+		size_t		_dyn_length;
 		void		_assign( const RWBitVec *s );
 };
 

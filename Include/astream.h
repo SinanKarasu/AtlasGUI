@@ -1,67 +1,33 @@
 #pragma once
-#include <iostream>
-#include <iomanip>
-#include "Std.h"
 
-#include "ASTBase.h"
-// #include	"ATokPtr.h"
-// #include	"PBlackBox.h"
+#include	<iostream>
+#include	<iomanip>
+#include	"Std.h"
 
-class astream : public std::fstream {
-    friend std::fstream &operator>>(std::fstream &, astream &);
-    friend std::fstream &operator<<(std::fstream &, const astream &);
+#include	"ASTBase.h"
 
-  public:
-    astream();
-    astream(const char *a, int x);
+class	astream : public std::fstream {
+		friend std::fstream	&operator>>( std::fstream&, astream& );
+		friend std::fstream	&operator<<( std::fstream&, const astream& );
+		
+		public:
+			astream();
+			//astream( const char* a, int x );
+	astream(const char* filename, std::ios::openmode mode);
+	astream(std::streambuf* sb);  // << new one
+			void	bin();
+			void	reset();
+			void	width( int &fw );
+			
+			int	binary;
+			int	field_width;
+	};
 
-    void bin();
-    void reset();
+astream		&operator<<( astream &s, const RWBitVec *x );
 
-    void width(int fw);
-    void attach(int fd) {
-        switch (fd) {
-            case 0:
-                this->std::ios::rdbuf(std::cin.rdbuf());
-                break;
-            case 1:
-                this->std::ios::rdbuf(std::cout.rdbuf());
-                break;
-            case 2:
-                this->std::ios::rdbuf(std::cerr.rdbuf());
-                break;
-            default:
-                throw std::runtime_error("astream::attach only supports 0, 1, 2 for stdin/stdout/stderr");
-        }
-    };
+astream		&operator>>( astream &s, AST *a );
+astream		&operator<<( astream &s, AST *a );
 
-    int binary;
-    int field_width;
-};
-
-astream &operator<<(astream &s, const BitVec *x);
-
-inline astream &operator<<(astream &s, const BitVec &x) {
-    return s << &x;
-}
-
-inline astream& operator<<(astream& s, const char* str) {
-	static_cast<std::ostream&>(s) << str;
-	return s;
-}
-
-inline astream& operator<<(astream& s, const std::string& str) {
-	static_cast<std::ostream&>(s) << str;
-	return s;
-}
-
-
-astream &operator>>(astream &s, AST *a);
-// astream		&operator<<( astream &s, AST *a );
-
-// Legacy overloads (re-enable as needed)
-// astream& operator<<(astream& s, const RWBitVec& x);
-// astream& operator>>(astream& s, AST* a);
-// astream& operator<<(astream& s, AST* a);
-// astream& operator<<(astream& s, const RWBitVec& vec);
+// dummied up, so it will link
 astream &operator>>(astream &s, BitVec &vec);
+

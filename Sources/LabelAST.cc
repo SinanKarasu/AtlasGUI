@@ -561,19 +561,14 @@ AST *	FileLabel::eval(AST * a)
 		if ( a == this ){
 			return	ASTdown()->eval( ASTdown() );
 		}else{
-			astream * file = new astream;
+			astream * file = new astream();
 
 			if ( getName() == "stdout" ){
-			
-				file->attach( 1 );			// attach cout or stdout.
-				
+				file = new astream(std::cout.rdbuf());			// attach cout or stdout.
 			}else if ( getName() == "stdin" ){
-			
-				file->attach( 0 );			// attach cin or stdin.
-			
+				file = new astream(std::cin.rdbuf());			// attach cin or stdin.
 			}else if ( getName() == "stderr" ){
-			
-				file->attach( 2 );			// attach cerr or stderr.
+				file = new astream(std::cerr.rdbuf());			// attach cerr or stderr.
 			}
 			FileType	tmp( file );
 			ASTdown()->assign( &tmp );

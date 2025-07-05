@@ -1071,7 +1071,7 @@ void convertSpecial(std::string& s) {
 
 
 //------------------------------------------------------------------------------------------//
-StringOfCharType::StringOfCharType(ANTLRTokenPtr p,int maxlen):BasicTypeAST(p, StringOfCharTypeValue )
+StringOfCharType::StringOfCharType(ANTLRTokenPtr p,size_t maxlen):BasicTypeAST(p, StringOfCharTypeValue )
 	{
 		std::string  s;
 		
@@ -1131,7 +1131,7 @@ StringOfCharType::StringOfCharType(ANTLRTokenPtr p,int maxlen):BasicTypeAST(p, S
 		_str = new std::string;
 	};
 
-StringOfCharType::StringOfCharType(const RWCString * str,int maxlen):BasicTypeAST(0, StringOfCharTypeValue )
+StringOfCharType::StringOfCharType(const RWCString * str,size_t maxlen):BasicTypeAST(0, StringOfCharTypeValue )
 	{
 		_dyn_length = str->length();
 		if(maxlen){
@@ -1594,7 +1594,7 @@ BitType::setInteger( int indx, Long value )
 	}
 
 //------------------------------------------------------------------------------------------//
-StringOfBitType::StringOfBitType(ANTLRTokenPtr p, int maxlen):BasicTypeAST(p, StringOfBitTypeValue ) {
+StringOfBitType::StringOfBitType(ANTLRTokenPtr p, size_t maxlen):BasicTypeAST(p, StringOfBitTypeValue ) {
 
 	int	bits_per_digit,
 		leading;
@@ -1672,7 +1672,7 @@ StringOfBitType::StringOfBitType(ANTLRTokenPtr p, int maxlen):BasicTypeAST(p, St
 }
 	
 	
-StringOfBitType::StringOfBitType(const RWBitVec * str, int dynlen):BasicTypeAST(0, StringOfBitTypeValue )
+StringOfBitType::StringOfBitType(const RWBitVec * str, size_t dynlen):BasicTypeAST(0, StringOfBitTypeValue )
 	{
 
 		_max_length = str->size();
